@@ -1,0 +1,170 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Introduction */
+
+.introduction-title {
+    font-size: 2em;
+    font-weight: bolder;
+    margin-left: 10%;
+}
+
+.introduction-text {
+    font-size: 1em;
+    margin: 0 12.5%;
+}
+
+/* Cards */
+
+.cards-wrapper {
+    margin: 5vh 4%;
+    display: flex;
+    padding: 0 5vw;
+}
+
+.card-content {
+    background-color: #d4d4d4;
+    min-width: 31.75%;
+    height: 15vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start; 
+    margin: 0 1%;
+}
+
+.card-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    border: solid 2px #DA9E05;
+}
+
+.card-img-experience {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.card-img-skill {
+    width: 36px;
+    height: 36px;
+    margin: 7.5px;
+}
+
+.card-img-certification {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 1vh 5%;
+    white-space: nowrap;
+}
+
+.card-text {
+    padding: 1vh 10%;
+    font-size: 1em;
+    margin: 0 5%;
+    overflow: hidden;
+}
+
+/* Map IFrame Google */
+
+.map-iframe {
+    margin: 5vh 4.25%;
+    padding: 0 5vw;
+}
+
+.map-iframe-container { 
+    display: flex;
+}
+
+.localisation-img {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+}
+
+.map-iframe iframe {
+    margin: 0 5%;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+
+    /* Cards */
+
+    .cards-wrapper {
+        margin: 5vh 5%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 5vw;
+    }
+    
+    .card-content {
+        background-color: #d4d4d4;
+        height: 15vh;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start; 
+        margin: 2vh 0;
+    }
+    
+    .card-circle{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 5px;
+        border: solid 2px #DA9E05;
+    }
+    
+    .card-img {
+        width: 40px;
+        height: 40px;
+        margin: 6px;
+    }
+    
+    .card-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+    
+    .card-title {
+        font-size: 1.5em;
+        font-weight: bolder;
+        margin: 1vh 5%;
+        white-space: nowrap;
+    }
+    
+    .card-text {
+        padding: 1vh 10%;
+        font-size: 1em;
+        margin: 0 5%;
+        overflow: hidden;
+    }
+
+    /* Map IFrame Google */
+
+    .map-iframe {
+        margin: 5vh 2.5%;
+        padding: 0 5vw;
+    }
+}
