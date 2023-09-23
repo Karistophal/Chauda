@@ -24,7 +24,7 @@ body {
 }
 
 .card-content {
-    background-color: #d4d4d4;
+    background-color: #c7c3c3;
     min-width: 31.75%;
     height: 15vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -32,6 +32,14 @@ body {
     flex-wrap: nowrap;
     align-items: flex-start; 
     margin: 0 1%;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card-content:hover {
+    background-color: #d1d1d1; /* Couleur au survol */
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Ombre légèrement plus prononcée au survol */
 }
 
 .card-circle {
@@ -41,6 +49,34 @@ body {
     margin: 5px;
     border: solid 2px #DA9E05;
 }
+
+.card-text-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.card-text-container p {
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 1vh 5%;
+    white-space: nowrap;
+}
+
+.card-text {
+    padding: 0.5vh 10%;
+    font-size: 1em;
+    margin: 0 5%;
+    overflow: hidden;
+}
+
+/* Card Images */
 
 .card-img-experience {
     width: 40px;
@@ -58,28 +94,6 @@ body {
     width: 40px;
     height: 40px;
     margin: 5px;
-}
-
-.card-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: flex-start;
-    overflow: hidden;
-}
-
-.card-title {
-    font-size: 1.5em;
-    font-weight: bolder;
-    margin: 1vh 5%;
-    white-space: nowrap;
-}
-
-.card-text {
-    padding: 1vh 10%;
-    font-size: 1em;
-    margin: 0 5%;
-    overflow: hidden;
 }
 
 /* Map IFrame Google */
@@ -101,13 +115,11 @@ body {
 
 .map-iframe iframe {
     margin: 0 5%;
-    width: 100%;
+    width: 95%;
 }
 
 @media (max-width: 1024px) {
-
     /* Cards */
-
     .cards-wrapper {
         margin: 5vh 5%;
         display: flex;
@@ -123,6 +135,17 @@ body {
         flex-wrap: nowrap;
         align-items: flex-start; 
         margin: 2vh 0;
+    }
+
+    .card-content:hover {
+        background-color: #d4d4d4;
+        height: 15vh;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start; 
+        margin: 2vh 0;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
     
     .card-circle{
