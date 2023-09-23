@@ -1,0 +1,38 @@
+.register-wrapper {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: 10% 37.5%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-header-title {
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+.informations-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 5%;
+}
+
+.informations-container label {
+    color: #000;
+    font-size: 1em;
+}
+
+.informations-container input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+}
