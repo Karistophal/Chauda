@@ -24,5 +24,8 @@ services:
     Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface:
         class: Symfony\Component\PasswordHasher\Hasher\UserPasswordHasher
 
+    App\Validator\Constraints\RegexValidator: ~
+    App\Validator\Constraints\RegexConstraint: ~
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
