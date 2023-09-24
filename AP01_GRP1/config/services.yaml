@@ -26,6 +26,8 @@ services:
 
     App\Validator\Constraints\RegexValidator: ~
     App\Validator\Constraints\RegexConstraint: ~
+    App\Validator\Constraints\NameValidator: ~
+    App\Validator\Constraints\NameConstraint: ~
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
