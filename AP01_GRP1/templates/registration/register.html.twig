@@ -6,7 +6,7 @@
 
 {% block body %}
 <link rel="stylesheet" href="/assets/stylesheets/register.css">
-
+{% if not app.user %} 
 <div class="register-wrapper">
     <div class="register-header">
         <h1 class="register-header-title">S'enregister</h1>
@@ -34,5 +34,5 @@
     <button type="submit" class="form-submit">S'inscrire</button>
     {{ form_end(registrationForm) }}
 </div>
-
+{% endif %}
 {% endblock %}
