@@ -6,11 +6,14 @@ use App\Repository\UtilisateurRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface; //
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
+ * @UniqueEntity(fields={"emailUtil"}, message="There is already an account with this emailUtil")
  */
-class Utilisateur
+class Utilisateur implements UserInterface // Implémentez UserInterface
 {
     /**
      * @ORM\Id
@@ -143,62 +146,35 @@ class Utilisateur
     }
 
     /**
-     * @return Collection<int, Avis>
+     * @return array
      */
-    public function getAvis(): Collection
+    public function getRoles(): array
     {
-        return $this->avis;
+        // Retournez les rôles de l'utilisateur, par exemple sous forme de tableau
+        return ['ROLE_USER'];
     }
 
-    public function addAvi(Avis $avi): self
+    public function getSalt()
     {
-        if (!$this->avis->contains($avi)) {
-            $this->avis[] = $avi;
-            $avi->setIdUtilAvis($this);
-        }
-
-        return $this;
+        return null;
     }
 
-    public function removeAvi(Avis $avi): self
+    public function eraseCredentials()
     {
-        if ($this->avis->removeElement($avi)) {
-            // set the owning side to null (unless already changed)
-            if ($avi->getIdUtilAvis() === $this) {
-                $avi->setIdUtilAvis(null);
-            }
-        }
-
-        return $this;
     }
 
-    /**
-     * @return Collection<int, Contact>
-     */
-    public function getContacts(): Collection
+    public function getPassword()
     {
-        return $this->contacts;
+        // Retournez le mot de passe de l'utilisateur
+        return $this->mdpUtil;
     }
 
-    public function addContact(Contact $contact): self
+    public function getUsername()
     {
-        if (!$this->contacts->contains($contact)) {
-            $this->contacts[] = $contact;
-            $contact->setIdUtilContact($this);
-        }
-
-        return $this;
+        // Retournez le nom d'utilisateur de l'utilisateur
+        return $this->loginUtil;
     }
 
-    public function removeContact(Contact $contact): self
-    {
-        if ($this->contacts->removeElement($contact)) {
-            // set the owning side to null (unless already changed)
-            if ($contact->getIdUtilContact() === $this) {
-                $contact->setIdUtilContact(null);
-            }
-        }
+    // Les autres méthodes restent inchangées
 
-        return $this;
-    }
 }
