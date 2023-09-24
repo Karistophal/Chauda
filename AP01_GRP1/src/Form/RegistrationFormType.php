@@ -11,6 +11,7 @@ use App\Validator\Constraints\RegexConstraint;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use App\Validator\Constraints\NameConstraint;   
 
 class RegistrationFormType extends AbstractType
 {
@@ -27,9 +28,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'register-label',
                 ],
                 'constraints' => [
-                    new RegexConstraint([
-                        'fieldName' => 'prenomUtil',
-                    ]),
+                    new NameConstraint(),
                 ],
             ])
             ->add('prenomUtil', TextType::class, [
@@ -42,9 +41,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'register-label',
                 ],
                 'constraints' => [
-                    new RegexConstraint([
-                        'fieldName' => 'nomUtil',
-                    ]),
+                    new NameConstraint(),
                 ],
             ])
             ->add('emailUtil', EmailType::class, [
@@ -80,10 +77,13 @@ class RegistrationFormType extends AbstractType
                         'placeholder' => 'Confirmer votre mot de passe',
                         'class' => 'register-password-input',
                     ],
-                    'invalid_message' => 'Les mots de passe ne correspondent pas.',
                 ],
                 'constraints' => [
-                    new RegexConstraint(), // Utilisation de la contrainte personnalisée
+                    new RegexConstraint(),
+                    new \Symfony\Component\Validator\Constraints\EqualTo([
+                        'propertyPath' => 'plainPassword',
+                        'message' => 'Les mots de passe ne correspondent pas.',
+                    ]),
                 ],
             ]);
     }

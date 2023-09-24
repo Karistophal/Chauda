@@ -24,22 +24,15 @@ class RegexValidator extends ConstraintValidator
                 ->addViolation();
         }
 
-        // Check if the field starts with an uppercase letter and does not contain digits or special characters
-        if (preg_match('/^[A-Z][^0-9@#$%^&+=\s]*$/', $value)) {
-            $fieldName = $constraint->fieldName; // Get the field name from the option
-            $this->context->buildViolation('Le champ "' . $fieldName . '" ne commence pas par une majuscule ou contient des caractères non autorisés.')
-                ->addViolation();
-        }
-
         // Check the password match if specified
         if ($constraint->matchField) {
             $field = $constraint->matchField;
             $matchValue = $this->context->getRoot()->get($field)->getData();
-
+        
             if ($value !== $matchValue) {
-                $this->context->buildViolation($constraint->matchMessage)
+                $this->context->buildViolation($constraint->matchMessage) // Utilisez $constraint->matchMessage ici
                     ->addViolation();
             }
-        }
+        }        
     }
 }

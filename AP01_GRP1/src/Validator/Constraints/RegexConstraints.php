@@ -18,8 +18,7 @@ class RegexConstraint extends Constraint
     public $minLength = 8;
 
     public $matchField; // Utilisé pour spécifier le champ de correspondance si nécessaire
-
-    public $fieldName = 'Le champ "{{ field }}" ne commence pas par une majuscule ou contient des caractères non autorisés.';
+    public $matchMessage = 'Les mots de passe ne correspondent pas'; // Message personnalisé pour la correspondance des mots de passe
 
     public function validatedBy()
     {
