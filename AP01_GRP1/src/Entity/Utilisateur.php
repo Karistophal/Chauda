@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface; //
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
- * @UniqueEntity(fields={"emailUtil"}, message="There is already an account with this emailUtil")
+ * @UniqueEntity(fields={"emailUtil"}, message="Un compte existe déjà avec cet Email")
  */
 class Utilisateur implements UserInterface // Implémentez UserInterface
 {

@@ -39,6 +39,11 @@
     background-color: #e6e6e6;
 }
 
+.register-input:focus {
+    border-bottom: 2px solid #DA9E05;
+    transform: scale(1.05);
+}
+
 .register-password-input {
     border: none;
     border-bottom: 2px solid #F0D224;
@@ -50,6 +55,12 @@
     width: 80%;
     padding-bottom: 1vh;
     background-color: #e6e6e6;
+    transition: border-color 0.3s;
+}
+
+.register-password-input:focus {
+    border-bottom: 2px solid #DA9E05;
+    transform: scale(1.05);
 }
 
 .form-submit {
@@ -67,6 +78,46 @@
     cursor: pointer;
     width: 50%;
 }
+
+.form-submit:hover {
+    background-color: #000;
+    color: #DA9E05;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 25%; /* Centrer horizontalement */
+    margin-bottom: 4vh; /* Espacement par rapport au bas */
+    cursor: pointer;
+    width: 50%;
+}
+
+.form-submit:focus {
+    background-color: #F0D224;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 25%; /* Centrer horizontalement */
+    margin-bottom: 4vh; /* Espacement par rapport au bas */
+    cursor: pointer;
+    width: 50%;
+}
+
+.has-error {
+    font-size: .8em;
+    text-decoration: underline;
+    margin: 0 5%;
+    color: red;
+}
+
 
 @media screen and (max-width: 1024px) {
     .register-wrapper {
