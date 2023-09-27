@@ -114,7 +114,7 @@
 .has-error {
     font-size: .8em;
     text-decoration: underline;
-    margin: 5% 0 0 0;
+    margin: 0 5%;
     color: red;
 }
 

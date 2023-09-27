@@ -30,7 +30,7 @@ class RegexValidator extends ConstraintValidator
             $matchValue = $this->context->getRoot()->get($field)->getData();
         
             if ($value !== $matchValue) {
-                $this->context->buildViolation($constraint->matchMessage) // Utilisez $constraint->matchMessage ici
+                $this->context->buildViolation($constraint->matchMessage)
                     ->addViolation();
             }
         }        
