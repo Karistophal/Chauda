@@ -80,10 +80,6 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new RegexConstraint(),
-                    new \Symfony\Component\Validator\Constraints\EqualTo([
-                        'propertyPath' => 'plainPassword',
-                        'message' => 'Les mots de passe ne correspondent pas.',
-                    ]),
                 ],
             ]);
     }

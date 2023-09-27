@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #d9d9d9;
 }
 
 /* Introduction */
@@ -13,6 +14,35 @@ body {
 .introduction-text {
     font-size: 1em;
     margin: 0 12.5%;
+}
+
+.introduction-text-edit {
+    font-size: 1em;
+    margin-left: 90%;
+}
+
+.introduction-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 9.25%;
+}
+
+.introduction-edit {
+    background-color: #DA9E05;
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+}
+
+.introduction-edit:hover {
+    background-color: #e0a70b;
+}
+
+.introduction-edit-img {
+    width: 28px;
+    height: 28px;
+    margin: 2px;    
 }
 
 /* Cards */
@@ -37,9 +67,9 @@ body {
 }
 
 .card-content:hover {
-    background-color: #d1d1d1; /* Couleur au survol */
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Ombre légèrement plus prononcée au survol */
+    background-color: #d1d1d1; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
 .card-circle {
@@ -67,6 +97,10 @@ body {
     font-weight: bolder;
     margin: 1vh 5%;
     white-space: nowrap;
+}
+
+.card-text-container {
+    background-color: #c7c3c3;
 }
 
 .card-text {
@@ -118,6 +152,25 @@ body {
     width: 95%;
 }
 
+.submit-button {
+    background-color: #e0a70b;
+    border-radius: 5px;
+    border: none;
+    padding: .5%;
+    margin: 0 5%;
+    font-size: 1em;
+    font-weight: bolder;
+    margin-left: 85%;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #DA9E05;
+    padding: .6%;
+    cursor: pointer;
+    transition:ease-in-out 0.2s;        
+}
+
 @media (max-width: 1024px) {
     /* Cards */
     .cards-wrapper {
@@ -138,7 +191,6 @@ body {
     }
 
     .card-content:hover {
-        background-color: #d4d4d4;
         height: 15vh;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         display: flex;
