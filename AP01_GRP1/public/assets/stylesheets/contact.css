@@ -1,0 +1,78 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #d9d9d9;
+}
+
+.titre {
+    margin-left: 200px;
+}
+
+.element {
+    margin: 4vh 4%;
+    display: flex;
+    padding: 0 12vw;
+    align-items: center;
+}
+
+
+.icone-element {
+    width: 35px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.element-image {
+    position: relative;
+    margin-right: 1.5vh;
+}
+
+.element-image::before {
+    content: ""; /* Ajoute le pseudo-élément */
+    position: absolute;
+    width: 50px; /* Ajustez la taille du cercle selon vos besoins */
+    height: 50px; /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #DA9E05; /* Couleur de fond du cercle */
+    border-radius: 50%; /* Crée un cercle en utilisant un rayon de bordure de 50% */
+    top: 45%; /* Positionne le cercle verticalement au milieu */
+    left: 40%; /* Positionne le cercle horizontalement au milieu */
+    transform: translate(-50%, -50%); /* Centre le cercle parfaitement */
+    z-index: -1; /* Met le cercle derrière l'image */
+}
+
+.titreh3{
+    margin-right: 55vh;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container {
+    background-color: #f0f0f0; /* Couleur de fond */
+    max-width: 1430px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrer le formulaire horizontalement */
+    padding: 20px; /* Ajouter un peu d'espace intérieur autour du formulaire */
+}
+
+.form-container label {
+    display: block; /* Les libellés sont affichés en ligne pour les aligner à gauche */
+    text-align: left; /* Alignement à gauche pour les libellés */
+}
+
