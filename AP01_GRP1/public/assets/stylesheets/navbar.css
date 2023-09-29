@@ -1,0 +1,167 @@
+:root {
+    --color-principale : #eb9100;
+    --color-secondaire: #C7C3C3;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center   ;
+    background-color: var(--color-secondaire);
+    height: 70px;
+    box-shadow: 0px 5px 10px rgb(128, 128, 128) ;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+/*Logo*/
+
+/*SELECTION CENTRALE*/
+.nav-header {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.choix-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.choix-header:hover {
+    color: aliceblue;
+}
+
+
+.cercle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-color: var(--color-principale);
+    border-radius: 40px;
+    border-width: 3px;
+    margin-right: 10px;
+}
+
+.cercle-Blanc {
+    border-color: aliceblue;
+}
+.icone{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.boxJaune {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-principale);
+    width: 35%;
+}
+
+/*ACCOUNT*/
+.compte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    visibility: hidden;
+}
+
+.boutonM {
+    background-color: var(--color-principale);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
+    cursor: pointer;
+}
+.bouton-blanc {
+    background-color:aliceblue;
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        font-size: 17px;
+    }
+    .boxJaune {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1024px)    {
+    .choix-header {
+        flex-direction: column;
+        justify-content: center;
+    }
+    header {
+        height: 90px;
+    }
+    .cercle {
+        margin-right: 0px;
+    }
+    .boxJaune {
+        width: 37%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        height: 80px;
+    }
+    .header-text {
+        display: none;
+    }
+    .choix-header {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .logo {
+        width: 20vw;
+    }
+    .cercle {
+        width: 8vw;
+        height: 8vw;
+        max-height: 50px;
+        max-width: 50px;
+        border-width: 3.5px;
+    }
+    .icone{
+        position: absolute;
+        width: 8vw;
+        height: 8vw;
+        max-height: 50px;
+        max-width: 50px;
+    }
+    .logo-account {
+        max-width: 8vw;
+    }
+    .boutonM{
+        display: none;
+    }
+    .logo-account {
+        position: relative;
+        visibility: visible ;
+        padding-right: 0;
+    }
+    .compte {
+        width: 20%;
+        justify-content: center;
+    }
+}
