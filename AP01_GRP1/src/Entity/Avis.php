@@ -33,7 +33,7 @@ class Avis
     private $noteAvis;
 
     /**
-     * @ORM\ManyToOne(targetEntity=utilisateur::class, inversedBy="avis")
+     * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="avis")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUtilAvis;

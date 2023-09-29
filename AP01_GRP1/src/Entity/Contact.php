@@ -28,7 +28,7 @@ class Contact
     private $messageContact;
 
     /**
-     * @ORM\ManyToOne(targetEntity=utilisateur::class, inversedBy="contacts")
+     * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="contacts")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUtilContact;
