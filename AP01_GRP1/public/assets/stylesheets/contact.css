@@ -7,54 +7,70 @@ body {
     margin-left: 200px;
 }
 
+/* Style de base pour le conteneur principal */
 .element {
-    margin: 4vh 4%;
     display: flex;
-    padding: 0 12vw;
-    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
+/* Style pour chaque élément individuel */
+.element div {
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    margin: 10px; /* Marge entre les éléments */
+}
 
+/* Style pour les images */
 .icone-element {
-    width: 35px;
+    max-height: 80%; /* Ajuste la hauteur de l'image pour l'aligner avec le texte */
+    max-width: 80%;
+    margin-right: 10px; /* Marge à droite de l'image */
+    width: 45px;
     height: auto;
-    margin-right: 5px;
+}
+
+/* Style pour les titres */
+.titreh3 {
+    margin: 0; /* Supprime la marge autour du titre */
 }
 
 .element-image {
     position: relative;
-    margin-right: 1.5vh;
+    margin-right: 1vh;
 }
 
 .element-image::before {
     content: ""; /* Ajoute le pseudo-élément */
     position: absolute;
-    width: 50px; /* Ajustez la taille du cercle selon vos besoins */
-    height: 50px; /* Ajustez la taille du cercle selon vos besoins */
-    background-color: #DA9E05; /* Couleur de fond du cercle */
+    width: 67px; /* Ajustez la taille du cercle selon vos besoins */
+    height: 67px; /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #e0a70b; /* Couleur de fond du cercle */
     border-radius: 50%; /* Crée un cercle en utilisant un rayon de bordure de 50% */
-    top: 45%; /* Positionne le cercle verticalement au milieu */
+    top: 50%; /* Positionne le cercle verticalement au milieu */
     left: 40%; /* Positionne le cercle horizontalement au milieu */
     transform: translate(-50%, -50%); /* Centre le cercle parfaitement */
     z-index: -1; /* Met le cercle derrière l'image */
 }
 
-.titreh3{
-    margin-right: 55vh;
+.ele2 {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 form {
-    width: 300px;
+    width: 800px;
     margin: 0 auto;
 }
 
 input[type="text"],
-input[type="email"],
 textarea {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px 5px;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 button {
     background-color: #007bff;
@@ -73,6 +89,40 @@ button {
 
 .form-container label {
     display: block; /* Les libellés sont affichés en ligne pour les aligner à gauche */
-    text-align: left; /* Alignement à gauche pour les libellés */
+    text-align: center; /* Alignement au centre pour les libellés */
 }
 
+.formList {
+    text-align: center;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableContainer td {
+    width: 150px;
+    height: 120px;
+    max-width: 400px; /* Définissez la largeur maximale souhaitée */
+
+}
+
+/* Définir une largeur maximale pour la colonne 3 */
+.tableContainer td:nth-child(3) {
+    word-wrap: break-word; /* Permet au texte de revenir à la ligne si nécessaire */
+
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+    font-size: 20px;
+}
+
+.user-selection {
+    display:none;
+}

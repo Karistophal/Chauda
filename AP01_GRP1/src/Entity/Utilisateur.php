@@ -80,7 +80,7 @@ class Utilisateur implements UserInterface // Implémentez UserInterface
 
     public function __toString()
     {
-        return $this->nomUtil; // Retourne l'attribut qui doit être converti en chaîne
+        return $this->nomUtil . ' ' . $this->prenomUtil . '  ' . $this->emailUtil; // Retourne l'attribut qui doit être converti en chaîne
     }
 
     public function setNomUtil(string $nomUtil): self

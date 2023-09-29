@@ -9,9 +9,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\ContactFormType;
 use App\Entity\Contact;
+use Symfony\Component\Security\Core\Security;
+
 
 class ContactController extends AbstractController
 {
+    private $security;
+
+    public function __construct(EntityManagerInterface $entityManager, Security $security)
+    {
+        $this->entityManager = $entityManager;
+        $this->security = $security;
+    }
+
     /**
      * @Route("/contact", name="app_contact")
      */
@@ -19,11 +29,14 @@ class ContactController extends AbstractController
     {
         //Créer un nouveau "contact"
         $contact = new Contact();
-        $contact->setSujetContact('TEST');
-        $contact->setMessageContact('Message de test voila voila');
-         
+
+        //Récupérer l'utilisateur connecté
+        $user = $this->security->getUser(); 
+
         //Créer le formulaire
-        $contactForm = $this->createForm(ContactFormType::class, $contact);
+        $contactForm = $this->createForm(ContactFormType::class, $contact, [
+            'user' => $user,
+        ]);
          
         //Traiter la requête du formulaire
         $contactForm->handleRequest($request);
@@ -31,9 +44,10 @@ class ContactController extends AbstractController
         //Vérifier que le formulaire est soumis et est validé
         if($contactForm->isSubmitted() && $contactForm->isValid())
         {
+
             $contact->setSujetContact($contactForm->get('sujetContact')->getData());
             $contact->setMessageContact($contactForm->get('messageContact')->getData());
-            $contact->setIdUtilContact($contactForm->get('idUtilContact')->getData());
+            $contact->setIdUtilContact($user);
  
             $entityManager->persist($contact);
             $entityManager->flush();
@@ -42,6 +56,18 @@ class ContactController extends AbstractController
 
         return $this->render('contact/index.html.twig', [
             'contactForm' => $contactForm->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/contact/liste", name="app_contact_liste")
+     */
+    public function listeContacts()
+    {
+        $contacts = $this->getDoctrine()->getRepository(Contact::class)->findAll();
+
+        return $this->render('contact/liste.html.twig', [
+            'contacts' => $contacts,
         ]);
     }
 }
