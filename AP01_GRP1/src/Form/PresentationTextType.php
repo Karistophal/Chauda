@@ -19,8 +19,7 @@ class PresentationTextType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'style' => 'background-color: transparent; border: none; outline: none; resize: none; font-family: inherit; font-size: inherit;',
-                    'class' => 'introduction-text-edit',
+                    'resize' => 'none',
                 ],
             ])
             ->add('experienceText', TextareaType::class, [

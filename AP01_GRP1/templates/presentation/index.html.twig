@@ -6,19 +6,19 @@
 
 <div class="introduction-wrapper">
     <div class="introduction-container">
-        <h1 class="introduction-title">Présentation</h1>
-        {% if app.user and app.user.droitUtil == 1 %}
-        <a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}" class="introduction-edit-link">
-            <div class="introduction-edit">
-                <img href="{{ path('app_presentation_edit', {'id': presentation.id}) }}" src="/assets/img/presentation/edit.png" alt="edit" class="introduction-edit-img">
-            </div>
-        </a>
-        {% endif %}    
+        <h1 class="introduction-title">Présentation</h1>  
     </div>
     <p class="introduction-text">{{ presentation.textePresentation }}</p>
 </div>
 
 <div class="cards-wrapper">
+    {% if app.user and app.user.droitUtil == 1 %}
+        <a href="{{ path('app_presentation_edit', {'id': presentation.id}) }}" class="introduction-edit-link">
+            <div class="form-edit">
+                <img href="{{ path('app_presentation_edit', {'id': presentation.id}) }}" src="/assets/img/presentation/edit.png" alt="edit" class="form-edit-img">
+            </div>
+        </a>
+    {% endif %}  
     <div class="card-content">
         <div class="card-circle">
             <img src="/assets/img/presentation/experience.png" alt="experience" class="card-img-experience">

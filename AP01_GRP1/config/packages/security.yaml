@@ -26,6 +26,9 @@ security:
             entry_point: App\Security\AppLoginAuthenticator
             logout:
                 path: app_logout
+            remember_me:
+                secret:   '%kernel.secret%' # required
+                lifetime: 604800 # 1 week in seconds
 
             # Add the failure_path configuration with the custom message
             # activate different ways to authenticate

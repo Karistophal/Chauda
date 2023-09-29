@@ -73,42 +73,15 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 0 25%; /* Centrer horizontalement */
-    margin-bottom: 4vh; /* Espacement par rapport au bas */
+    margin: 0 25%; 
+    margin-bottom: 4vh; 
     cursor: pointer;
     width: 50%;
 }
 
 .form-submit:hover {
-    background-color: #000;
-    color: #DA9E05;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0 25%; /* Centrer horizontalement */
-    margin-bottom: 4vh; /* Espacement par rapport au bas */
-    cursor: pointer;
-    width: 50%;
-}
-
-.form-submit:focus {
     background-color: #F0D224;
     color: #fff;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0 25%; /* Centrer horizontalement */
-    margin-bottom: 4vh; /* Espacement par rapport au bas */
-    cursor: pointer;
-    width: 50%;
 }
 
 .has-error {

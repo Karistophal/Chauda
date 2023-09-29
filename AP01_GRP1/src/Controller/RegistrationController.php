@@ -31,7 +31,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Encode the plain password
+            // Encodez le mot de passe 
             $user->setMdpUtil(
                 $userPasswordHasher->hashPassword(
                     $user,
@@ -39,13 +39,12 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            // Set additional fields from the form
+            // Assigner les autres valeurs
             $user->setNomUtil($form->get('nomUtil')->getData());
             $user->setPrenomUtil($form->get('prenomUtil')->getData());
 
             $entityManager->persist($user);
             $entityManager->flush();
-            // Do anything else you need here, like sending an email
 
             return $this->redirectToRoute('presentation');
         }
