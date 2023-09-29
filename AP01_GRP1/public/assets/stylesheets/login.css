@@ -6,6 +6,7 @@
     background-color: #e6e6e6;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+    transition: width 0.3s, margin 0.3s;
 }
 
 .login-header-title {
@@ -39,6 +40,22 @@
     background-color: #e6e6e6;
 }
 
+.form-input:focus {
+    border-bottom: 2px solid #DA9E05;
+    transform: scale(1.05);
+}
+
+.form-error {
+    color: red;
+    font-size: 0.8em;
+    margin: 2% 7.5%;
+    text-decoration: underline;
+}
+
+.form-remember {
+    margin: 1% 7.5%;
+}
+
 .form-submit {
     background-color: #DA9E05;
     color: #000;
@@ -49,8 +66,45 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 2vh 25%; /* Centrer horizontalement */
-    margin-bottom: 4vh; /* Espacement par rapport au bas */
+    margin: 2vh 25%;
+    margin-bottom: 4vh; 
     cursor: pointer;
     width: 50%;
+}
+
+.form-submit:hover {
+    background-color: #F0D224;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .login-wrapper {
+        width: 42.5%;
+        margin: 7.5% 25%;
+    }
+    
+    .login-header-title {
+        font-size: 1.5em;
+    }
+    
+    .form-submit {
+        width: 60%;
+        margin: 2vh 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-wrapper {
+        width: 50%;
+        margin: 7.5% 25%;
+    }
+    
+    .login-header-title {
+        font-size: 1.2em;
+    }
+    
+    .form-submit {
+        width: 80%;
+        margin: 2vh 10%;
+    }
 }
