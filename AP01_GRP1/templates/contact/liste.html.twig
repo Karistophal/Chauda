@@ -19,11 +19,18 @@
         <th>Message</th>
 
     {% for contact in contacts %}
-        <tr>
+        <tr>           
             <td>{{contact.id}}</td>
             <td>{{contact.idUtilContact}}</td>
             <td>{{contact.sujetContact}}</td>
             <td>{{contact.messageContact}}</td>
+            <td>
+                <form action="{{ path('app_contact_delete', {'id': contact.id}) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
+                <button type="submit">Supprimer</button>
+                </form>
+            </td>
         </tr>
     {% endfor %}
 

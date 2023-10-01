@@ -126,3 +126,7 @@ a {
 .user-selection {
     display:none;
 }
+
+.formList h1 {
+    margin-bottom: 7vh;
+}

@@ -10,6 +10,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Form\ContactFormType;
 use App\Entity\Contact;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 
 class ContactController extends AbstractController
@@ -44,30 +46,55 @@ class ContactController extends AbstractController
         //Vérifier que le formulaire est soumis et est validé
         if($contactForm->isSubmitted() && $contactForm->isValid())
         {
+            // Vérifier si un utilisateur est connecté
+            if (!$user instanceof UserInterface) {
+            // Rediriger l'utilisateur vers la page d'inscription (ajustez le nom de la route selon vos besoins)
+            return $this->redirectToRoute('app_login');
+            }
 
+            else  {
             $contact->setSujetContact($contactForm->get('sujetContact')->getData());
             $contact->setMessageContact($contactForm->get('messageContact')->getData());
             $contact->setIdUtilContact($user);
  
             $entityManager->persist($contact);
             $entityManager->flush();
+            }
  
+        }
+
+        // Récupérer la liste des contacts si l'utilisateur a le droit
+        $contactList = [];
+        if ($user instanceof UserInterface && $user->getDroitUtil() == 1) {
+            $contactList = $this->getDoctrine()->getRepository(Contact::class)->findAll();
         }
 
         return $this->render('contact/index.html.twig', [
             'contactForm' => $contactForm->createView(),
+            'contacts' => $contactList,
         ]);
     }
 
     /**
-     * @Route("/contact/liste", name="app_contact_liste")
-     */
-    public function listeContacts()
+    * @Route("/contact/delete/{id}", name="app_contact_delete", methods={"DELETE"})
+    */
+    public function delete(Request $request, Contact $contact): Response
     {
-        $contacts = $this->getDoctrine()->getRepository(Contact::class)->findAll();
+        //Récupérer l'utilisateur connecté
+        $user = $this->security->getUser();
 
-        return $this->render('contact/liste.html.twig', [
-            'contacts' => $contacts,
-        ]);
+        if ($user->getDroitUtil() == 1)
+        {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($contact);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_contact');
+        }
+        else {
+            // Utilisateur sans droits
+            $this->addFlash('error', 'Vous n\'avez pas les droits pour supprimer ce contact.');
+            return $this->redirectToRoute('app_contact');
+        }
     }
 }
