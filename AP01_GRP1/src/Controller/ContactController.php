@@ -59,6 +59,8 @@ class ContactController extends AbstractController
  
             $entityManager->persist($contact);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_contact_confirm');
             }
  
         }
@@ -96,5 +98,13 @@ class ContactController extends AbstractController
             $this->addFlash('error', 'Vous n\'avez pas les droits pour supprimer ce contact.');
             return $this->redirectToRoute('app_contact');
         }
+    }
+
+    /**
+    * @Route("/contact/confirm", name="app_contact_confirm")
+    */
+    public function confirm(): Response
+    {
+        return $this->render('contact/confirm.html.twig');
     }
 }

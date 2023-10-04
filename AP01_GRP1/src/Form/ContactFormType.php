@@ -27,10 +27,10 @@ class ContactFormType extends AbstractType
             ->add('messageContact', TextareaType::class, [
                 'label' => 'Message :',
                 'attr' => [
-                    'rows' => 6,
+                    'rows' => 10,
                     'placeholder' => 'Message',
                     'class' => 'msg',
-                    'style' => 'resize: vertical',
+                    'style' => 'resize: none',
                     ]
             ])
             ->add('idUtilContact')
