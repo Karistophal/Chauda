@@ -46,7 +46,8 @@
             {{ form_errors(registrationForm.plainPassword) }}
         </div>
     {% endif %}
-</div>
+    <a class="form-already" href="{{ path('login') }}">Vous-avez déjà un compte ?</a>
+    </div>
     <button type="submit" class="form-submit">S'inscrire</button>
     {{ form_end(registrationForm) }}
 </div>

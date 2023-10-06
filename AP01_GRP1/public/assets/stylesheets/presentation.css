@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-block: 2vh;
 }
 
 .introduction-container div {
@@ -22,8 +23,7 @@ body {
 .introduction-title {
     font-size: 2em;
     font-weight: bolder;
-    justify-content: center;
-    margin: 2vh 42.5%;
+    margin: 0 42.5%;
 }
 
 .introduction-title-edit {
