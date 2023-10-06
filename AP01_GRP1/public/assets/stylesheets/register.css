@@ -1,3 +1,4 @@
+
 .register-wrapper {
     width: 32.5%;
     display: flex;
@@ -63,6 +64,12 @@
     transform: scale(1.05);
 }
 
+.form-already {
+    color: #000;
+    font-size: 12px;
+    margin: 1vh 10%;
+}
+
 .form-submit {
     background-color: #DA9E05;
     color: #000;
@@ -73,7 +80,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 0 25%; 
+    margin: 2vh 25% 0vh 25%; 
     margin-bottom: 4vh; 
     cursor: pointer;
     width: 50%;
