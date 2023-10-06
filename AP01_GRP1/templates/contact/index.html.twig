@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="/assets/stylesheets/contact.css">
+
+<div class="titre">
+    <h2>Nous contacter, c'est simple : </h2>
+</div>
+
+<div class="element">
+    <div class="ele1">
+    <div class="element-image">
+        <img src="/assets/img/contact/tel.png" class="icone-element">
+    </div>
+    <div class="element-txt">
+        <h3 class="titreh3">01.01.01.01.01</h3>
+    </div>
+</div>
+<div class="ele2">
+    <div class="element-image">
+        <img src="/assets/img/contact/maison.png" class="icone-element">
+    </div>
+    <div class="element-txt">
+        <h3>5 Pl. de la République, 27200 Vernon</h3>
+    </div>
+</div>
+<div class="ele3">
+    <div class="element-image">
+        <img src="/assets/img/contact/courrier.png" class="icone-element">
+    </div>
+    <div class="element-txt">
+        <h3>exemple@exemple.com</h3>
+    </div>
+</div>
+</div>
+
+
+
+{% if app.user and app.user.droitUtil == 1 %}
+    
+    {% include "contact/liste.html.twig" with {'contacts': contacts} %}
+
+
+{% else %}
+    <div class="titre">
+        <h2>Ou bien :</h2>
+    </div>
+    <div class="form-container">
+        {% include "contact/_form.html.twig" %}
+    </div>
+{% endif %}
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #d9d9d9;
+}
+
+.titre {
+    margin-left: 200px;
+}
+
+/* Style de base pour le conteneur principal */
+.element {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+/* Style pour chaque élément individuel */
+.element div {
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    margin: 10px; /* Marge entre les éléments */
+}
+
+/* Style pour les images */
+.icone-element {
+    max-height: 80%; /* Ajuste la hauteur de l'image pour l'aligner avec le texte */
+    max-width: 80%;
+    margin-right: 10px; /* Marge à droite de l'image */
+    width: 45px;
+    height: auto;
+}
+
+/* Style pour les titres */
+.titreh3 {
+    margin: 0; /* Supprime la marge autour du titre */
+}
+
+.element-image {
+    position: relative;
+    margin-right: 1vh;
+}
+
+.element-image::before {
+    content: ""; /* Ajoute le pseudo-élément */
+    position: absolute;
+    width: 67px; /* Ajustez la taille du cercle selon vos besoins */
+    height: 67px; /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #e0a70b; /* Couleur de fond du cercle */
+    border-radius: 50%; /* Crée un cercle en utilisant un rayon de bordure de 50% */
+    top: 50%; /* Positionne le cercle verticalement au milieu */
+    left: 40%; /* Positionne le cercle horizontalement au milieu */
+    transform: translate(-50%, -50%); /* Centre le cercle parfaitement */
+    z-index: -1; /* Met le cercle derrière l'image */
+}
+
+.ele2 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+ form {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+
+button {
+    background-color: #e0a70b;
+    color: white;
+    padding: 10px 20px;
+    border: solid 1px black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.form-container {
+    background-color: #f0f0f0; /* Couleur de fond */
+    max-width: 95%; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrer le formulaire horizontalement */
+    padding: 20px; /* Ajouter un peu d'espace intérieur autour du formulaire */
+}
+
+.form-container label {
+    display: block; /* Les libellés sont affichés en ligne pour les aligner à gauche */
+    text-align: center; /* Alignement au centre pour les libellés */
+}
+
+.formList {
+    text-align: center;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableContainer td {
+    width: 150px;
+    height: 120px;
+    max-width: 400px; /* Définissez la largeur maximale souhaitée */
+
+}
+
+/* Définir une largeur maximale pour la colonne 3 */
+.tableContainer td:nth-child(3) {
+    word-wrap: break-word; /* Permet au texte de revenir à la ligne si nécessaire */
+
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+    font-size: 20px;
+}
+
+.user-selection {
+    display:none;
+}
+
+.formList h1 {
+    margin-bottom: 7vh;
+}
+
+.confirm {
+    text-align: center;
+    margin-top: 15vh;
+}
+
+.frmDelete {
+    width: 0px;
+    height: 0px;
+    font-size: 10px;
+    margin-bottom: 25px;
+}

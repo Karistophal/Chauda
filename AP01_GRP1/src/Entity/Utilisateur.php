@@ -78,6 +78,11 @@ class Utilisateur implements UserInterface // Implémentez UserInterface
         return $this->nomUtil;
     }
 
+    public function __toString()
+    {
+        return $this->nomUtil . ' ' . $this->prenomUtil . '  ' . $this->emailUtil; // Retourne l'attribut qui doit être converti en chaîne
+    }
+
     public function setNomUtil(string $nomUtil): self
     {
         $this->nomUtil = $nomUtil;

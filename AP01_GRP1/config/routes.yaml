@@ -14,3 +14,10 @@ app_presentation:
     resource: ../src/Controller/PresentationController.php
     prefix: /
     type: annotation
+app_contact_liste:
+    resource: ../src/Controller/ContactController.php
+    prefix: /
+    type: annotation
+app_contact_delete:
+    path: /contact/delete/{id}
+    controller: App\Controller\ContactController::delete
