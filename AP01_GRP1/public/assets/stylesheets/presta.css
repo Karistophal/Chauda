@@ -1,0 +1,148 @@
+body {
+    background-color: #d9d9d9;
+}
+
+.titrePresta {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(4, 115px);
+    justify-content: center;
+    grid-gap: 0px 35px;
+    text-align: center;
+}
+
+.p1 {
+    grid-column: 1;
+    grid-row: 1/5;
+    background-image: url(/assets/img/presta/clim.jpg);
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
+    text-align: center;
+}
+
+.txtp1 {
+    grid-column: 1;
+    grid-row: 4;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.txtp1 h4 {
+    margin-bottom: 10px;
+}
+
+.txtp1 button {
+    background-color: orange;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
+    cursor: pointer;
+    color: white;
+}
+
+.wrapper h4 {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wrapper p {
+    color: #e2810e;
+}
+
+.p2 {
+    grid-column: 2;
+    grid-row: 1/5;
+    background-image: url(/assets/img/presta/install-chauffage.jpg);
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
+}
+
+.txtp2 {
+    grid-column: 2;
+    grid-row: 4;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.txtp2 h4 {
+    margin-bottom: 10px;
+}
+
+.txtp2 button {
+    background-color: orange;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
+    cursor: pointer;
+    color: white;
+}
+
+.p3 {
+    grid-column: 3;
+    grid-row: 1/5;
+    background-image: url(/assets/img/presta/regul-thermique.jpg);
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
+}
+
+.txtp3 {
+    grid-column: 3;
+    grid-row: 4;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.txtp3 h4 {
+    margin-bottom: 10px;
+}
+
+.txtp3 button {
+    background-color: orange;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
+    cursor: pointer;
+    color: white;
+}
+
+.p4 {
+    grid-column: 4;
+    grid-row: 1/5;
+    background-image: url(/assets/img/presta/reparation.jpg);
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
+}
+
+.txtp4 {
+    grid-column: 4;
+    grid-row: 4;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.txtp4 h4 {
+    margin-bottom: 10px;
+}
+
+.txtp4 button {
+    background-color: orange;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
+    cursor: pointer;
+    color: white;
+}

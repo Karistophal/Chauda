@@ -27,6 +27,26 @@ class Prestation
      */
     private $descPrestation;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prixHT;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $prixTTC;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $mainOeuvre;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $dureePrestation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +72,54 @@ class Prestation
     public function setDescPrestation(string $descPrestation): self
     {
         $this->descPrestation = $descPrestation;
+
+        return $this;
+    }
+
+    public function getPrixHT(): ?float
+    {
+        return $this->prixHT;
+    }
+
+    public function setPrixHT(float $prixHT): self
+    {
+        $this->prixHT = $prixHT;
+
+        return $this;
+    }
+
+    public function getPrixTTC(): ?float
+    {
+        return $this->prixTTC;
+    }
+
+    public function setPrixTTC(float $prixTTC): self
+    {
+        $this->prixTTC = $prixTTC;
+
+        return $this;
+    }
+
+    public function getMainOeuvre(): ?int
+    {
+        return $this->mainOeuvre;
+    }
+
+    public function setMainOeuvre(int $mainOeuvre): self
+    {
+        $this->mainOeuvre = $mainOeuvre;
+
+        return $this;
+    }
+
+    public function getDureePrestation(): ?float
+    {
+        return $this->dureePrestation;
+    }
+
+    public function setDureePrestation(float $dureePrestation): self
+    {
+        $this->dureePrestation = $dureePrestation;
 
         return $this;
     }
