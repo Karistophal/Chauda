@@ -5,15 +5,47 @@ body {
 .titrePresta {
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    margin-bottom: 5vh;
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 20%);
-    grid-template-rows: repeat(4, 115px);
     justify-content: center;
-    grid-gap: 0px 35px;
+    grid-gap: 40px 35px;
     text-align: center;
+}
+
+.wrapper h4 {
+    margin-bottom: 10px;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wrapper button {
+    background-color: #e2810e;
+    color: white;
+    padding: 8px 16px; /* Espacement à l'intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de la souris */
+    font-size: 13px; /* Taille de la police */
+    border: 1px solid white;
+    transition: background-color 0.3s ease; /* Animation de la couleur de fond */
+}
+
+.wrapper button:hover {
+    background-color: white; /* Couleur de fond au survol */
+    color:#e2810e;
+    border: 1px solid #e2810e;
+}
+
+.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12 {
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
 }
 
 .p1 {
@@ -33,29 +65,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
 }
 
-.txtp1 h4 {
-    margin-bottom: 10px;
-}
-
-.txtp1 button {
-    background-color: orange;
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
-    cursor: pointer;
-    color: white;
-}
-
-.wrapper h4 {
-    color: white;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.wrapper p {
-    color: #e2810e;
-}
 
 .p2 {
     grid-column: 2;
@@ -73,19 +82,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
 }
 
-.txtp2 h4 {
-    margin-bottom: 10px;
-}
-
-.txtp2 button {
-    background-color: orange;
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
-    cursor: pointer;
-    color: white;
-}
 
 .p3 {
     grid-column: 3;
@@ -101,20 +97,6 @@ body {
     grid-column: 3;
     grid-row: 4;
     background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
-}
-
-.txtp3 h4 {
-    margin-bottom: 10px;
-}
-
-.txtp3 button {
-    background-color: orange;
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
-    cursor: pointer;
-    color: white;
 }
 
 .p4 {
@@ -133,16 +115,109 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
 }
 
-.txtp4 h4 {
-    margin-bottom: 10px;
+.p5 {
+    grid-column: 1;
+    grid-row: 5/9;
+    background-image: url(/assets/img/presta/reparation.jpg);
+    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
+    border: 1px solid black;
 }
 
-.txtp4 button {
-    background-color: orange;
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
-    cursor: pointer;
-    color: white;
+.txtp5 {
+    grid-column: 1;
+    grid-row: 8;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p6 {
+    grid-column: 2;
+    grid-row: 5/9;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp6 {
+    grid-column: 2;
+    grid-row: 8;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p7 {
+    grid-column: 3;
+    grid-row: 5/9;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp7 {
+    grid-column: 3;
+    grid-row: 8;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p8 {
+    grid-column: 4;
+    grid-row: 5/9;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp8 {
+    grid-column: 4;
+    grid-row: 8;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p9 {
+    grid-column: 1;
+    grid-row: 9/13;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp9 {
+    grid-column: 1;
+    grid-row: 12;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p10 {
+    grid-column: 2;
+    grid-row: 9/13;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp10 {
+    grid-column: 2;
+    grid-row: 12;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p11 {
+    grid-column: 3;
+    grid-row: 9/13;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp11 {
+    grid-column: 3;
+    grid-row: 12;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+.p12 {
+    grid-column: 4;
+    grid-row: 9/13;
+    background-image: url(/assets/img/presta/reparation.jpg);
+}
+
+.txtp12 {
+    grid-column: 4;
+    grid-row: 12;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 0.5 (50%) */
+}
+
+
+.prestation-details {
+    display: none;
+    color: red;
+    justify-content: space-around;
 }

@@ -7,29 +7,27 @@
     <h1>Nos prestations</h1>
 </div>
 
-<div class="wrapper">
-    <div class="p1"></div>
-    <div class="p2"></div>
-    <div class="p3"></div>
-    <div class="p4"></div>
-    <div class="txtp1">
-        <h4>{{ prestation1.libPrestation }}</h4>
-        <button>En savoir plus</button>
-    </div>
-    <div class="txtp2">
-        <h4>{{ prestation2.libPrestation }}</h4>
-        <button>En savoir plus</button>
-    </div>
-    <div class="txtp3">
-        <h4>{{ prestation3.libPrestation }}</h4>
-        <button>En savoir plus</button>
-    </div>
-    <div class="txtp4">
-        <h4>{{ prestation4.libPrestation }}</h4>
-        <button>En savoir plus</button>
-    </div>
+{% set prestationsCount = prestations|length %}
+{% set rowCount = prestationsCount <= 4 ? 4 : (prestationsCount <= 8 ? 8 : (prestationsCount <= 12 ? 12 : prestationsCount)) %}
+<div class="wrapper" style="grid-template-rows: repeat({{ rowCount }}, 125px)">
+    {% for prestation in prestations %}
+        <div class="p{{ prestation.id }}"></div>
+        <div class="txtp{{ prestation.id }}">
+            <h4>{{ prestation.libPrestation }}</h4>
+            <button class="en-savoir-plus" data-target="prestation-details-{{ prestation.id }}">En savoir plus</button>
+        </div>
+        
+
+    {% endfor %}
 </div>
+    {% for prestation in prestations %}
 
+        <div id="prestation-details-{{ prestation.id }}" class="prestation-details">
+            <p>{{ prestation.descPrestation }}</p>
+            <p>Prix : {{ prestation.prixTTC }} €</p>
+        </div>
+    {% endfor %}
 
+<script src="js/presta.js"></script>
 
 {% endblock %}
