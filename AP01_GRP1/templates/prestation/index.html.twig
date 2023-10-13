@@ -5,6 +5,9 @@
 
 <div class="titrePresta">
     <h1>Nos prestations</h1>
+    {% if app.user and app.user.droitUtil == 1 %}
+    <button onclick="window.location.href = '/prestation/add'">Ajouter une prestation</button>
+    {% endif %}
 </div>
 
 {% set prestationsCount = prestations|length %}
@@ -23,8 +26,28 @@
     {% for prestation in prestations %}
 
         <div id="prestation-details-{{ prestation.id }}" class="prestation-details">
-            <p>{{ prestation.descPrestation }}</p>
-            <p>Prix : {{ prestation.prixTTC }} €</p>
+            <img class="image-detail" src="/assets/img/presta/presta_{{ prestation.id }}.jpg">
+            <div id="details" class="details">
+                <h2>{{ prestation.libPrestation }}</h2>
+                <p>{{ prestation.descPrestation }}</p>
+                <p>Prix : {{ prestation.prixTTC }} €</p>
+                <p>Nécessite {{ prestation.mainOeuvre }} personnes.</p>
+                <p>Durée : {{ prestation.dureePrestation }} heure(s).</p>
+            {% if app.user and app.user.droitUtil == 1 %}
+            <div class="buttonsAdmin">
+                <form class="frmEdit" action="{{ path('app_prestation_edit', {'id': prestation.id}) }}" method="post">
+                <input type="hidden" name="_method" value="EDIT">
+                <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ prestation.id) }}">
+                <button type="submit" class="EditButton">Modifier</button>
+                </form>
+                <form class="frmDelete" action="{{ path('app_prestation_delete', {'id': prestation.id}) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ prestation.id) }}">
+                <button type="submit">Supprimer</button>
+                </form>
+            </div>
+            {% endif %}
+            </div>
         </div>
     {% endfor %}
 

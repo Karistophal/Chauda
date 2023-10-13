@@ -1,9 +1,9 @@
-// Attendez que le document soit prêt
+// Attendre que le document soit prêt
 document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionnez tous les boutons "En savoir plus" par leur classe
+    // Sélectionner tous les boutons "En savoir plus" par leur classe
     var enSavoirPlusButtons = document.querySelectorAll(".en-savoir-plus");
 
-    // Ajoutez un gestionnaire d'événements "click" à chaque bouton
+    // Ajouter un gestionnaire d'événements "click" à chaque bouton
     enSavoirPlusButtons.forEach(function(button) {
         button.addEventListener("click", function() {
             var target = button.getAttribute("data-target");
@@ -15,8 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 detail.style.display = "none";
             });
 
-            // Utilisez JavaScript pour afficher la description de la prestation cliquée
+            //Affichage des détails de la prestation
             detailsElement.style.display = "flex";
-        });
+
+            // Faire défiler la page jusqu'à l'élément cible
+            for (let i = 0; i < allDetailsElements.length; i++)
+            {
+                allDetailsElements[i].scrollIntoView({ behavior: "smooth" }); // "smooth" pour un défilement fluide
+            }
+        })
     });
 });

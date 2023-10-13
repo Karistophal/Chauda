@@ -14,6 +14,9 @@ app_presentation:
     resource: ../src/Controller/PresentationController.php
     prefix: /
     type: annotation
+prestation:
+    path: /prestation
+    controller: 'App\Controller\PrestationController::index'
 app_contact_liste:
     resource: ../src/Controller/ContactController.php
     prefix: /
@@ -21,3 +24,9 @@ app_contact_liste:
 app_contact_delete:
     path: /contact/delete/{id}
     controller: App\Controller\ContactController::delete
+app_prestation_delete:
+    path: /prestation/delete/{id}
+    controller: App\Controller\PrestationController::delete
+app_prestation_add:
+    path: /prestation/add
+    controller: App\Controller\PrestationController::add

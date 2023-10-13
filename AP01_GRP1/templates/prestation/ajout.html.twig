@@ -1,0 +1,25 @@
+
+{% block body %}
+
+<link rel="stylesheet" href="/assets/stylesheets/presta.css">
+
+<h1>Ajouter une prestation</h1>
+
+<div class="form-container">
+{{ form_start(prestaForm)}}
+    <div class="textbox">
+    {{ form_row(prestaForm.libPrestation) }}
+    {{ form_row(prestaForm.descPrestation) }}
+    </div>
+    <div class="numbers">
+    {{ form_row(prestaForm.prixHT)}}
+    {{ form_row(prestaForm.prixTTC)}}
+    {{ form_row(prestaForm.mainOeuvre) }}
+    {{ form_row(prestaForm.dureePrestation)}}
+    </div>
+
+    <button type="submit" class="confirmAjout">Ajouter</button>
+{{ form_end(prestaForm) }}
+</div>
+
+{% endblock %}
