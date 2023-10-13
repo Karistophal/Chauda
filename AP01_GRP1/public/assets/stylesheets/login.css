@@ -3,11 +3,20 @@ form {
     height: 100%;
 }
 
+.container {
+    padding-top: 5.75rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .login-container {
@@ -15,7 +24,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: #e6e6e6;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(14, 12, 12, 0.3);
     border-radius: 10px;
     transition: width 0.3s, margin 0.3s;
 }

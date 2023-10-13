@@ -6,6 +6,7 @@
 
 <link rel="stylesheet" href="/assets/stylesheets/login.css">
 <form method="post">
+<div class="container">
     <div class="login-wrapper">
         <div class="login-container">
             <div class="login-header">
@@ -38,5 +39,5 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
 </form>
-
+</div>
 {% endblock %}
