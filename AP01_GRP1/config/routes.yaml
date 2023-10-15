@@ -13,6 +13,9 @@ login:
 presentation:
     path: /presentation
     controller: 'App\Controller\PresentationController::index'
+avis:
+    path: /avis
+    controller: 'App\Controller\AvisController::index'
 app_presentation:
     resource: ../src/Controller/PresentationController.php
     prefix: /
