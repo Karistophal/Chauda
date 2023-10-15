@@ -30,3 +30,6 @@ app_prestation_delete:
 app_prestation_add:
     path: /prestation/add
     controller: App\Controller\PrestationController::add
+app_prestation_edit:
+    path: /prestation/edit/{id}
+    controller: App\Controller\PrestationController::edit

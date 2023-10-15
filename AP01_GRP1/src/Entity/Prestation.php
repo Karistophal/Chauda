@@ -12,7 +12,6 @@ class Prestation
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -47,9 +46,21 @@ class Prestation
      */
     private $dureePrestation;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $idPresta)
+    {
+        $this->id = $idPresta;
+
+        return $this;
     }
 
     public function getLibPrestation(): ?string
@@ -120,6 +131,18 @@ class Prestation
     public function setDureePrestation(float $dureePrestation): self
     {
         $this->dureePrestation = $dureePrestation;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

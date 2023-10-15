@@ -1,5 +1,6 @@
 body {
     background-color: #d9d9d9;
+    font-family: 'Roboto', sans-serif;
 }
 
 .titrePresta {
@@ -50,8 +51,7 @@ body {
 .p1 {
     grid-column: 1;
     grid-row: 1/5;
-    background-image: url(/assets/img/presta/presta_1.jpg);
-    background-position: center center; /* Centre l'image horizontalement et verticalement */
+    background-position: top top; /* Centre l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
     text-align: center;
@@ -67,7 +67,6 @@ body {
 .p2 {
     grid-column: 2;
     grid-row: 1/5;
-    background-image: url(/assets/img/presta/presta_2.jpg);
     background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
@@ -83,7 +82,6 @@ body {
 .p3 {
     grid-column: 3;
     grid-row: 1/5;
-    background-image: url(/assets/img/presta/presta_3.jpg);
     background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
@@ -98,7 +96,6 @@ body {
 .p4 {
     grid-column: 4;
     grid-row: 1/5;
-    background-image: url(/assets/img/presta/presta_4.jpg);
     background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
@@ -113,7 +110,6 @@ body {
 .p5 {
     grid-column: 1;
     grid-row: 5/9;
-    background-image: url(/assets/img/presta/reparation.jpg);
     background-position: center center; /* Centre l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir la div */
@@ -128,7 +124,6 @@ body {
 .p6 {
     grid-column: 2;
     grid-row: 5/9;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp6 {
@@ -140,7 +135,6 @@ body {
 .p7 {
     grid-column: 3;
     grid-row: 5/9;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp7 {
@@ -152,7 +146,6 @@ body {
 .p8 {
     grid-column: 4;
     grid-row: 5/9;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp8 {
@@ -164,7 +157,6 @@ body {
 .p9 {
     grid-column: 1;
     grid-row: 9/13;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp9 {
@@ -176,7 +168,6 @@ body {
 .p10 {
     grid-column: 2;
     grid-row: 9/13;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp10 {
@@ -188,7 +179,6 @@ body {
 .p11 {
     grid-column: 3;
     grid-row: 9/13;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp11 {
@@ -200,7 +190,6 @@ body {
 .p12 {
     grid-column: 4;
     grid-row: 9/13;
-    background-image: url(/assets/img/presta/reparation.jpg);
 }
 
 .txtp12 {
@@ -227,38 +216,97 @@ body {
 
 .details h2 {
     padding-bottom: 35px;
+    text-align: center;
 }
 
 .prestation-details p {
     font-size: 20px;
 }
 
+
+/* Styling for the entire form container */
 .form-container {
-    background-color: #f0f0f0; /* Couleur de fond */
-    max-width: 95%; /* Largeur maximale du formulaire */
-    margin: 0 auto; /* Centrer le formulaire horizontalement */
-    padding: 6vh 2vh; /* Ajouter un peu d'espace intérieur autour du formulaire */
-    border: 1px solid black;
-    display: flex;
-}
-
-.form-container label {
-    display: block; /* Les libellés sont affichés en ligne pour les aligner à gauche */
-    text-align: center; /* Alignement au centre pour les libellés */
-}
-
-.form-container form {
-    width: 70%;
-    height: 75%;
+    width: 88%;
+    height: auto;
     margin: 0 auto;
-    font-size: 20px;
-}
-
-input[type="text"],
-textarea, input[type="number"] {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the form title */
+  .titreForm {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the form fields and labels */
+  .textbox, .numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for form labels */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Styling for the text input fields */
+  input[type="text"], input[type="number"] {
     width: 100%;
-    padding: 7px;
-    margin: 5px 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-}
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the text area */
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the submit button */
+  .confirmAjout {
+    background-color: #e2810e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  .confirmAjout:hover {
+    background-color: #e9932b;
+  }
+
+  .buttonsAdmin {
+    text-align: center;
+  }
+
+  .buttonsAdmin button {
+    background-color: #e2810e;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  .buttonsAdmin button:hover {
+    background-color: #e9932b;
+  }
+
+  .detailsChiffres {
+    text-align: center;
+  }
+  

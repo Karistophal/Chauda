@@ -3,13 +3,16 @@
 
 <link rel="stylesheet" href="/assets/stylesheets/presta.css">
 
-<h1>Ajouter une prestation</h1>
+<div class="titreForm">
+    <h1>Ajouter une prestation</h1>
+</div>
 
 <div class="form-container">
 {{ form_start(prestaForm)}}
     <div class="textbox">
     {{ form_row(prestaForm.libPrestation) }}
     {{ form_row(prestaForm.descPrestation) }}
+    {{ form_row(prestaForm.image) }}
     </div>
     <div class="numbers">
     {{ form_row(prestaForm.prixHT)}}
@@ -21,5 +24,7 @@
     <button type="submit" class="confirmAjout">Ajouter</button>
 {{ form_end(prestaForm) }}
 </div>
+
+<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
 
 {% endblock %}
