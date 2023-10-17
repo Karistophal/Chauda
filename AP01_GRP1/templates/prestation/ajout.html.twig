@@ -7,14 +7,17 @@
     <h1>Ajouter une prestation</h1>
 </div>
 
-<div class="form-container">
+<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
+
+
+<div class="form-containerAdd">
 {{ form_start(prestaForm)}}
-    <div class="textbox">
+    <div class="textboxAdd">
     {{ form_row(prestaForm.libPrestation) }}
     {{ form_row(prestaForm.descPrestation) }}
     {{ form_row(prestaForm.image) }}
     </div>
-    <div class="numbers">
+    <div class="numbersAdd">
     {{ form_row(prestaForm.prixHT)}}
     {{ form_row(prestaForm.prixTTC)}}
     {{ form_row(prestaForm.mainOeuvre) }}
@@ -25,6 +28,6 @@
 {{ form_end(prestaForm) }}
 </div>
 
-<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
+
 
 {% endblock %}

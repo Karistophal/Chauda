@@ -16,10 +16,10 @@ class ModifPrestaType extends AbstractType
     {
         $builder
             ->add('libPrestation', TextType::class, [
-                'label' => 'Libellé de la prestation :',
+                'label' => 'Libellé de la prestation : ',
             ])
             ->add('descPrestation', TextareaType::class, [
-                'label' => 'Message :',
+                'label' => 'Message : ',
                 'attr' => [
                     'rows' => 10,
                     'style' => 'resize: vertical'
@@ -28,26 +28,26 @@ class ModifPrestaType extends AbstractType
                     
             ->add('prixHT', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix HT :',
+                'label' => 'Prix HT : ',
             ])
 
             ->add('prixTTC', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix TTC :',
+                'label' => 'Prix TTC : ',
             ])
 
             ->add('mainOeuvre', NumberType::class, [
                 'html5' => true,
-                'label' => "Main d'oeuvre nécessaire :",
+                'label' => "Main d'oeuvre nécessaire : ",
             ])
 
             ->add('dureePrestation', NumberType::class, [
                 'html5' => true,
-                'label' => 'Durée de la prestation (en heure(s))',
+                'label' => 'Durée de la prestation (en heure(s)) : ',
             ])
 
             ->add('image', TextareaType::class, [
-                'label' => "Lien de l'image"
+                'label' => "Lien de l'image : "
             ])
         ;
     }

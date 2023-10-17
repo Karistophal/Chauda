@@ -146,6 +146,9 @@ class PrestationController extends AbstractController
  
             $entityManager->persist($Prestation);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_prestation');
+
         }
         
 
