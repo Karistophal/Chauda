@@ -6,6 +6,8 @@
     <h1>Modifier une prestation</h1>
 </div>
 
+{% if app.user and app.user.droitUtil == 1 %}
+
 <div class="form-container">
 {{ form_start(editForm)}}
     <div class="textbox">
@@ -26,4 +28,10 @@
 
 <button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
 
+{% else %}
+<div class="txtError">
+    <p>Vous n'avez pas le droit de modifier une prestation</p>
+    <a href="/prestation">Retour</a>
+</div>
+{% endif %}
 {% endblock %}

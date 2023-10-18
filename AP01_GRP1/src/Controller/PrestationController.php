@@ -75,7 +75,7 @@ class PrestationController extends AbstractController
         //Récupérer l'utilisateur connecté
         $user = $this->security->getUser();
 
-        if ($user->getDroitUtil() == 1)
+        if ($user != null && $user->getDroitUtil() == 1)
         {
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($prestation);
@@ -94,7 +94,6 @@ class PrestationController extends AbstractController
         }
         else {
             // Utilisateur sans droits
-            $this->addFlash('error', 'Vous n\'avez pas les droits pour supprimer ce contact.');
             return $this->redirectToRoute('app_prestation');
         }
     }

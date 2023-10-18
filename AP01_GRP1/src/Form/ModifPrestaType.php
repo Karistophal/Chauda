@@ -22,18 +22,18 @@ class ModifPrestaType extends AbstractType
                 'label' => 'Message : ',
                 'attr' => [
                     'rows' => 10,
-                    'style' => 'resize: vertical'
-                    ]
+                    'style' => 'resize: vertical',
+                ]
             ])
                     
             ->add('prixHT', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix HT : ',
+                'label' => 'Prix HT (€) : ',
             ])
 
             ->add('prixTTC', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix TTC : ',
+                'label' => 'Prix TTC (€) : ',
             ])
 
             ->add('mainOeuvre', NumberType::class, [

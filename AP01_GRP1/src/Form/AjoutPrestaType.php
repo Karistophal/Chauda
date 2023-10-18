@@ -17,24 +17,28 @@ class AjoutPrestaType extends AbstractType
         $builder
             ->add('libPrestation', TextType::class, [
                 'label' => 'Libellé de la prestation : ',
+                'attr' => [
+                    'placeholder' => "Titre de la nouvelle prestation...",
+                    ]
             ])
             ->add('descPrestation', TextareaType::class, [
-                'label' => 'Message : ',
+                'label' => 'Description : ',
                 'attr' => [
                     'rows' => 10,
                     'style' => 'resize: vertical',
+                    'placeholder' => "Description de la nouvelle prestation...",
                     ]
             ])
                     
             ->add('prixHT', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix HT : ',
+                'label' => 'Prix HT (€) : ',
                 'data' => 0,
             ])
 
             ->add('prixTTC', NumberType::class, [
                 'html5' => true,
-                'label' => 'Prix TTC : ',
+                'label' => 'Prix TTC (€) : ',
                 'data' => 0,
             ])
 
@@ -51,7 +55,12 @@ class AjoutPrestaType extends AbstractType
             ])
 
             ->add('image', TextareaType::class, [
-                'label' => "Lien de l'image : "
+                'label' => "Lien de l'image : ",
+                'attr' => [
+                    'rows' => 6,
+                    'style' => 'resize: vertical',
+                    'placeholder' => "Exemple : https://www.powertrafic.fr/wp-content/uploads/2023/04/image-ia-exemple.png.......",
+                    ]
             ])
         ;
     }

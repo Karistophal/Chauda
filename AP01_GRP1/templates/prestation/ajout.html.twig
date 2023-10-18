@@ -7,8 +7,9 @@
     <h1>Ajouter une prestation</h1>
 </div>
 
-<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
+{% if app.user and app.user.droitUtil == 1 %}
 
+<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
 
 <div class="form-containerAdd">
 {{ form_start(prestaForm)}}
@@ -28,6 +29,11 @@
 {{ form_end(prestaForm) }}
 </div>
 
-
+{% else %}
+    <div class="txtError">
+        <p>Vous n'avez pas le droit d'ajouter une prestation</p>
+        <a href="/prestation">Retour</a>
+    </div>
+{% endif %}
 
 {% endblock %}

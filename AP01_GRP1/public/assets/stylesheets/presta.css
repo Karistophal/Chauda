@@ -260,7 +260,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
   
@@ -270,7 +270,7 @@ body {
     height: 150px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
   
@@ -279,6 +279,7 @@ body {
     background-color: #e2810e;
     color: #fff;
     padding: 10px 20px;
+    margin-top: 10px;
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
@@ -327,11 +328,12 @@ body {
     height: auto;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 1px solid black;
     border-radius: 5px;
     text-align: center;
   }
+
 
   .textboxAdd, .numbersAdd {
     display: block;
@@ -342,7 +344,7 @@ body {
     width: 600px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
 
@@ -350,7 +352,7 @@ body {
     width: 250px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
   
@@ -359,7 +361,7 @@ body {
     width: 600px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
   }
 
@@ -405,7 +407,13 @@ body {
     cursor: pointer;
     margin-left: 5%;
     margin-bottom: 10px;
+    margin-top: 10px;
     border: 1px solid black;
     font-size: 14px;
     border-radius: 5px;
+}
+
+.txtError {
+    text-align: center;
+    font-size: 20px;
 }
