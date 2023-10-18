@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestation
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="/assets/stylesheets/presta.css">
+
+<div class="titrePresta">
+    <h1>Nos prestations</h1>
+    {% if app.user and app.user.droitUtil == 1 %}
+    <button onclick="window.location.href = '/prestation/add'">Ajouter une prestation</button>
+    {% endif %}
+</div>
+
+{% set prestationsCount = prestations|length %}
+{% set rowCount = prestationsCount <= 4 ? 4 : (prestationsCount <= 8 ? 8 : (prestationsCount <= 12 ? 12 : prestationsCount)) %}
+<div class="wrapper" style="grid-template-rows: repeat({{ rowCount }}, 125px)">
+    {% for prestation in prestations %}
+        <div class="p{{ prestation.id }}" style="background-image: url({{prestation.image}})"></div>
+        <div class="txtp{{ prestation.id }}">
+            <h4>{{ prestation.libPrestation }}</h4>
+            <button class="en-savoir-plus" data-target="prestation-details-{{ prestation.id }}">En savoir plus</button>
+        </div>
+        
+
+    {% endfor %}
+</div>
+    {% for prestation in prestations %}
+
+        <div id="prestation-details-{{ prestation.id }}" class="prestation-details">
+            <img class="image-detail" src="{{prestation.image}}">
+            <div id="details" class="details">
+                <h2>{{ prestation.libPrestation }}</h2>
+                {% set description = prestation.descPrestation %}
+                {% set sentences = description|split('.') %}
+                {% set chunkSize = 11 %}
+
+                {% for key, sentence in sentences %}
+                    {% if key is not same as(sentences|length - 1) %}
+                        {% set sentence = sentence ~ '.' %}
+                    {% endif %}
+                    {% set words = sentence|split(' ') %}
+                    {% for chunk in words|batch(chunkSize) %}
+                        <p>{{ chunk|join(' ') }}</p>
+                    {% endfor %}
+                {% endfor %}
+                <br>
+                <div class="detailsChiffres">
+                    <p>Prix : {{ prestation.prixTTC }} €</p>
+                    <p>Nécessite {{ prestation.mainOeuvre }} personne(s).</p>
+                    <p>Durée : {{ prestation.dureePrestation }} heure(s).</p>
+                </div>
+            {% if app.user and app.user.droitUtil == 1 %}
+            <div class="buttonsAdmin">
+                <button onclick="window.location.href = '{{ path('app_prestation_edit', {'id': prestation.id}) }}'">Modifier</button>
+                <button onclick="window.location.href = '{{ path('app_prestation_delete', {'id': prestation.id}) }}'">Supprimer</button>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+<script src="js/presta.js"></script>
+
+{% endblock %}
