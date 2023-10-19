@@ -34,7 +34,6 @@ class AvisController extends AbstractController
      */
     public function index(AvisRepository $avisBase, Request $request): Response
     {
-
         $lesAvis = $avisBase->findAll();
 
         //calcul moyenne avis
@@ -57,7 +56,7 @@ class AvisController extends AbstractController
         $form = $this->createForm(AvisFormType::class, $leAvis);
         $form->handleRequest($request);
         
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $user != null){
             $entityManager = $this->getDoctrine()->getManager();
             $leAvis->setIdUtilAvis($user);
             $leAvis->setDateAvis(new \DateTime());
