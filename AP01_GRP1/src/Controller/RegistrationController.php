@@ -46,7 +46,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('presentation');
+            return $this->redirectToRoute('accueil');
         }
 
         // Vérifiez la contrainte de validation personnalisée (regex)
