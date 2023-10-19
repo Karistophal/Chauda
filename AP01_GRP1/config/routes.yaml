@@ -42,3 +42,6 @@ app_prestation_add:
 app_prestation_edit:
     path: /prestation/edit/{id}
     controller: App\Controller\PrestationController::edit
+confidentialite:
+    path: /confidentialite
+    controller: 'App\Controller\ConfidentialiteController::index'
