@@ -29,10 +29,12 @@
 	</head>
 	<body>
 		<header>
-			<img src="assets/img/navbar/logo.svg" class="logoImg">
+			<a href="{{ path('accueil') }}" class="a-img">
+				<img src="assets/img/navbar/logo.svg" class="logoImg">
+			</a>
 			<div class="nav-header">
 
-				<a href="{{ path('accueil', parameters = []) }}" class="choix-header">
+				<a href="{{ path('accueil') }}" class="choix-header">
 					<div class="cercle"><img src="assets/img/navbar/home.svg" alt="Accueil" class="icone"></div>
 					<div class="header-text">Accueil</div>
 				</a>
@@ -50,7 +52,7 @@
 
 				<div class="boxJaune">
 
-					<a href="" class="choix-header">
+					<a href="{{ path('avis')}}" class="choix-header">
 						<div class="cercle cercle-Blanc"><img src="assets/img/navbar/avis.svg" alt="Avis" class="icone"></div>
 						<div class="header-text">Avis</div>
 					</a>
