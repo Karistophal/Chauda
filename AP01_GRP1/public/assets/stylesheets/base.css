@@ -9,9 +9,10 @@ body {
     margin: 0;
 }
 
-.logoImg {
-    height: 100%;
+a {
+    color: black;
 }
+
 
 header {
     display: flex;
@@ -27,11 +28,15 @@ header {
 
 header a {
     text-decoration: none;
-    color: black;
 }
 
 /*Logo*/
-
+.a-img {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 150px;
+}
 
 /*SELECTION CENTRALE*/
 .nav-header {
@@ -96,12 +101,15 @@ header a {
 }
 
 .boutonM {
+    display: flex;
+    justify-content: center;
     background-color: var(--color-principale);
     padding: 10px;
     margin-right: 10px;
     border-radius: 10px;
     box-shadow: 0px 3px 5px rgb(128, 128, 128) ;
     cursor: pointer;
+    width: 100px;
 }
 .bouton-blanc {
     background-color:aliceblue;
@@ -125,7 +133,7 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 25px;
-    width: 30%;
+    width: 35%;
 }
 
 
@@ -136,6 +144,7 @@ footer {
     .boxJaune {
         width: 40%;
     }
+
 }
 
 @media screen and (max-width: 1024px)    {
@@ -151,6 +160,9 @@ footer {
     }
     .boxJaune {
         width: 37%;
+    }
+    .footer-choix {
+        width: 50%;
     }
 }
 
@@ -196,5 +208,8 @@ footer {
     .compte {
         width: 20%;
         justify-content: center;
+    }
+    .footer-choix {
+        width: 70%;
     }
 }

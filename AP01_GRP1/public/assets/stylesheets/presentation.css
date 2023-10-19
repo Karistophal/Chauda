@@ -2,6 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #d9d9d9;
+    width: 100%;
 }
 
 .introduction-wrapper {
@@ -10,10 +11,11 @@ body {
 
 /* Introduction */
 .introduction-container {
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-block: 2vh;
+    margin-bottom: 2vh;
 }
 
 .introduction-container div {
