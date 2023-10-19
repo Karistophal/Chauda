@@ -37,8 +37,9 @@ Le projet Chauda est un site Web conçu pour un chauffagiste, offrant une platef
    composer install
    php bin/console doctrine:database:create
    php bin/console doctrine:migrations:migrate
+   symfony serve --> Lance le serveur en 127.0.0.1:8000
    ```
 
 ## Jeu de test
 
-      Le compte admin : bob@gmail.com:Administrateur123@
+Le compte admin : bob@gmail.com:Administrateur123@
