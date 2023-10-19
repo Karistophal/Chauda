@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface; //
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
- * @UniqueEntity(fields={"emailUtil"}, message="There is already an account with this emailUtil")
+ * @UniqueEntity(fields={"emailUtil"}, message="Un compte existe déjà avec cet Email")
  */
 class Utilisateur implements UserInterface // Implémentez UserInterface
 {
@@ -76,6 +76,11 @@ class Utilisateur implements UserInterface // Implémentez UserInterface
     public function getNomUtil(): ?string
     {
         return $this->nomUtil;
+    }
+
+    public function __toString()
+    {
+        return $this->nomUtil . ' ' . $this->prenomUtil . '  ' . $this->emailUtil; // Retourne l'attribut qui doit être converti en chaîne
     }
 
     public function setNomUtil(string $nomUtil): self

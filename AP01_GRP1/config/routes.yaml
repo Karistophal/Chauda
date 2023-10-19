@@ -1,12 +1,47 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-presentation:
-    path: /presentation
-    controller: 'App\Controller\PresentationController::index'
+accueil:
+    path: /
+    controller: App\Controller\AccueilController::index
 register:
     path: /register
     controller: 'App\Controller\RegistrationController::index'
 login:
     path: /login
     controller: 'App\Controller\AuthenticatorController::index'
+presentation:
+    path: /presentation
+    controller: 'App\Controller\PresentationController::index'
+avis:
+    path: /avis
+    controller: 'App\Controller\AvisController::index'
+app_presentation:
+    resource: ../src/Controller/PresentationController.php
+    prefix: /
+    type: annotation
+contact:
+    path: /contact
+    controller: 'App\Controller\ContactController::index'
+app_contact_liste:
+    resource: ../src/Controller/ContactController.php
+    prefix: /
+    type: annotation
+app_contact_delete:
+    path: /contact/delete/{id}
+    controller: App\Controller\ContactController::delete
+prestation:
+    path: /prestation
+    controller: 'App\Controller\PrestationController::index'
+app_prestation_delete:
+    path: /prestation/delete/{id}
+    controller: App\Controller\PrestationController::delete
+app_prestation_add:
+    path: /prestation/add
+    controller: App\Controller\PrestationController::add
+app_prestation_edit:
+    path: /prestation/edit/{id}
+    controller: App\Controller\PrestationController::edit
+confidentialite:
+    path: /confidentialite
+    controller: 'App\Controller\ConfidentialiteController::index'

@@ -1,45 +1,110 @@
+/* Styles de base */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #d9d9d9;
+    width: 100%;
+}
+
+.introduction-wrapper {
+    margin: 0 8.75%;
 }
 
 /* Introduction */
+.introduction-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.introduction-container div {
+    width: 100%;
+}
 
 .introduction-title {
     font-size: 2em;
     font-weight: bolder;
-    margin-left: 10%;
+    margin: 0 42.5%;
+}
+
+.introduction-title-edit {
+    font-size: 2em;
+    font-weight: bolder;
+    justify-content: center;
+    text-align: center;
 }
 
 .introduction-text {
     font-size: 1em;
-    margin: 0 12.5%;
+    margin: 0 .5vw;
+}
+
+.introduction-text-edit {
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    resize: none; 
+    font-family: inherit; 
+    font-size: inherit; 
+    font-size: 1em;
+    width: 100%;
+    margin-left: -1.5vw;
+}
+
+.form-edit {
+    background-color: #DA9E05;
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+    right: 1vw;
+    position: absolute;
+}
+
+.introduction-edit-link {
+    margin-top: -320px;
+
+}
+
+.form-edit:hover {
+    background-color: #e0a70b;
+    transform: translateY(-2px);
+}
+
+.form-edit-img {
+    position: inherit;
+    width: 28px;
+    height: 28px;
+    margin: 2px;
 }
 
 /* Cards */
-
 .cards-wrapper {
-    margin: 5vh 4%;
+    margin: 5vh 7.5%;
+    align-items: center;
     display: flex;
-    padding: 0 5vw;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1%;
+    position: relative;
 }
 
 .card-content {
     background-color: #c7c3c3;
-    min-width: 31.75%;
+    width: 32.5%;
     height: 15vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-wrap: nowrap;
-    align-items: flex-start; 
+    align-items: flex-start;
     margin: 0 1%;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
 
 .card-content:hover {
-    background-color: #d1d1d1; /* Couleur au survol */
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Ombre légèrement plus prononcée au survol */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
 .card-circle {
@@ -69,41 +134,33 @@ body {
     white-space: nowrap;
 }
 
+.card-text-container {
+    background-color: #c7c3c3;
+}
+
 .card-text {
     padding: 0.5vh 10%;
-    font-size: 1em;
+    font-size: .8em;
     margin: 0 5%;
     overflow: hidden;
 }
 
-/* Card Images */
-
-.card-img-experience {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-}
-
-.card-img-skill {
-    width: 36px;
-    height: 36px;
-    margin: 7.5px;
-}
-
+/* Cards image */
+.card-img-experience,
+.card-img-skill,
 .card-img-certification {
     width: 40px;
     height: 40px;
     margin: 5px;
 }
 
-/* Map IFrame Google */
-
+/* Imap card */
 .map-iframe {
     margin: 5vh 4.25%;
     padding: 0 5vw;
 }
 
-.map-iframe-container { 
+.map-iframe-container {
     display: flex;
 }
 
@@ -114,69 +171,89 @@ body {
 }
 
 .map-iframe iframe {
-    margin: 0 5%;
-    width: 95%;
+    margin: 0 3.25%;
+    width: 93%;
 }
 
-@media (max-width: 1024px) {
-    /* Cards */
-    .cards-wrapper {
-        margin: 5vh 5%;
-        display: flex;
-        flex-direction: column;
-        padding: 0 5vw;
+/* Submit */
+.submit-button {
+    background-color: #e0a70b;
+    border-radius: 5px;
+    border: none;
+    padding: .5%;
+    font-size: 1em;
+    font-weight: bolder;
+    margin-left: 84%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #DA9E05;
+    transform: translateY(-2px);
+}
+
+/* MediaQuery (max-width: 1024px) */
+@media (max-width: 1096px) {
+    .introduction-title {
+        margin: 2vh 37.5%;
     }
-    
+
+    .introduction-text {
+        margin: 2vh 5%;
+    }
+
+    .introduction-text-edit {
+        margin: 0 2.5%;
+    }
+
+    .form-edit {
+        margin-right: 3.25vw;
+    }
+
+    /* Styles pour les cards en mode responsive */
+    .cards-wrapper {
+        flex-direction: column;
+    }
+
     .card-content {
-        background-color: #d4d4d4;
-        height: 15vh;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: flex-start; 
-        margin: 2vh 0;
+        margin: 2vh 5%;
+        width: 90%;
     }
 
     .card-content:hover {
-        background-color: #d4d4d4;
-        height: 15vh;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: flex-start; 
-        margin: 2vh 0;
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
-    
-    .card-circle{
+
+    .card-circle {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         margin: 5px;
         border: solid 2px #DA9E05;
     }
-    
+
     .card-img {
         width: 40px;
         height: 40px;
         margin: 6px;
     }
-    
-    .card-text-wrapper {
+
+    .card-text-container {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
         align-items: flex-start;
         overflow: hidden;
     }
-    
+
     .card-title {
         font-size: 1.5em;
         font-weight: bolder;
         margin: 1vh 5%;
         white-space: nowrap;
     }
-    
+
     .card-text {
         padding: 1vh 10%;
         font-size: 1em;
@@ -184,8 +261,7 @@ body {
         overflow: hidden;
     }
 
-    /* Map IFrame Google */
-
+    /* Imap card */
     .map-iframe {
         margin: 5vh 2.5%;
         padding: 0 5vw;

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="assets/stylesheets/accueil.css">
+
+	<div class="images">
+		<img class="image" src="/assets/img/accueil/chauffage2.jpg" alt="">
+		<div class="fleches">
+			<div class="fleche-gauche cercles"><img src="assets/img/accueil/fleche.svg" class="img-fleche"></div>
+			<div class="fleche-droite cercles"><img src="assets/img/accueil/fleche.svg" class="img-fleche" style="rotate: 180deg;"></div>
+		</div>
+	</div>
+
+
+	<div class="corps">
+		<div class="bienvenue">
+			<h1>Bienvenue</h1>
+			<p>Vous avez envie d’installer un chauffage au sein de votre habitation ? Ou bien aimeriez vous placer un système de ventilation à votre domicile pour pouvoir profiter de la meilleure qualité d’air ? Faites confiance à Chauda coorp. pour vos installations de chauffage, ventilation, réparations et dépannage.</p>
+			<p>Grâce à nos compétences, nous pouvons réaliser vos travaux de chauffage et mettons à votre disposition plusieurs services afin de vous faire bénéficier d’une installation impeccable.</p>
+			<p>Notre équipe travaille à vos côtés en toute sécurité, parmi nos interventions, vous pouvez trouver l'installation de chauffage central (mazout et gaz), par le sol, de sanitaires, de chaudières et autres types de systèmes.</p>
+		</div>
+
+
+		<div class="choisir">
+			<div class="choix">
+				<img src="assets/img/accueil/chauffagiste.jpg" alt="" class="img-choix">
+				<div class="info-choix">
+					Qui sommes-nous ?
+					<a href="{{ path('presentation')}}" style="text-decoration: none;"><div class="savoir-plus">en savoir plus</div></a>
+				</div>
+			</div>
+			<div class="choix">
+				<img src="assets/img/accueil/preastation.jpg" alt="" class="img-choix">
+				<div class="info-choix">
+					Nos prestations
+					<a href="{{ path('prestation') }}" style="text-decoration: none;"><div class="savoir-plus">en savoir plus</div></a>
+				</div>
+			</div>
+			<div class="choix">
+				<img src="assets/img/accueil/contacter.jpg" alt="" class="img-choix">
+				<div class="info-choix">
+					Nous contacter
+					<a href="{{ path('contact') }}" style="text-decoration: none;"><div class="savoir-plus">en savoir plus</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/accueil.js"></script>
+</div>{% endblock %}
+

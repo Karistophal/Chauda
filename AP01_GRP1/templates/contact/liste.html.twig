@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="/assets/stylesheets/contact.css">
+
+{% if app.user and app.user.droitUtil == 1 %}
+
+<div class="formList">
+
+
+<h1>Liste des formulaires de contact</h1>
+<div class="tableContainer">
+    <table>
+        <th>ID Contact</th>
+        <th>Utilisateur</th>
+        <th>Sujet</th>
+        <th>Message</th>
+
+    {% for contact in contacts %}
+        <tr>           
+            <td>{{contact.id}}</td>
+            <td>{{contact.idUtilContact}}</td>
+            <td>{{contact.sujetContact}}</td>
+            <td>{{contact.messageContact}}</td>
+            <td>
+                <form class="frmDelete" action="{{ path('app_contact_delete', {'id': contact.id}) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
+                <button type="submit">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </table>
+</div>
+{% else %}
+    <p>Vous n'avez pas le droit de consulter les formulaires de contact envoyés.</p>
+{% endif %}
+</div>

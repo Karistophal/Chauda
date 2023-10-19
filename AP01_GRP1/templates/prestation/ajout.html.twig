@@ -1,0 +1,39 @@
+
+{% block body %}
+
+<link rel="stylesheet" href="/assets/stylesheets/presta.css">
+
+<div class="titreForm">
+    <h1>Ajouter une prestation</h1>
+</div>
+
+{% if app.user and app.user.droitUtil == 1 %}
+
+<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
+
+<div class="form-containerAdd">
+{{ form_start(prestaForm)}}
+    <div class="textboxAdd">
+    {{ form_row(prestaForm.libPrestation) }}
+    {{ form_row(prestaForm.descPrestation) }}
+    {{ form_row(prestaForm.image) }}
+    </div>
+    <div class="numbersAdd">
+    {{ form_row(prestaForm.prixHT)}}
+    {{ form_row(prestaForm.prixTTC)}}
+    {{ form_row(prestaForm.mainOeuvre) }}
+    {{ form_row(prestaForm.dureePrestation)}}
+    </div>
+
+    <button type="submit" class="confirmAjout">Ajouter</button>
+{{ form_end(prestaForm) }}
+</div>
+
+{% else %}
+    <div class="txtError">
+        <p>Vous n'avez pas le droit d'ajouter une prestation</p>
+        <a href="/prestation">Retour</a>
+    </div>
+{% endif %}
+
+{% endblock %}

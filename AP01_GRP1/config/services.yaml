@@ -10,6 +10,8 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    App\Controller\PresentationController:
+        autowire: true
     
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -23,6 +25,11 @@ services:
     # Add the configuration for UserPasswordHasherInterface
     Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface:
         class: Symfony\Component\PasswordHasher\Hasher\UserPasswordHasher
+
+    App\Validator\Constraints\RegexValidator: ~
+    App\Validator\Constraints\RegexConstraint: ~
+    App\Validator\Constraints\NameValidator: ~
+    App\Validator\Constraints\NameConstraint: ~
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
