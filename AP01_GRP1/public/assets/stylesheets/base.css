@@ -34,6 +34,11 @@ header {
     width: 60%;
 }
 
+.nav-logo {
+    width: 150px;
+    height: 75px;
+}
+
 .choix-header {
     display: flex;
     justify-content: center;

@@ -17,7 +17,7 @@ class AuthenticatorController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-           return $this->redirectToRoute('presentation');
+           return $this->redirectToRoute('accueil');
         }
 
         // get the login error if there is one
