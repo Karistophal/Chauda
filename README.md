@@ -1,6 +1,6 @@
 # Projet Chauda - Site Web pour un Chauffagiste
 
-![Chauda Logo](https://imgur.com/a/g4UOi3B)
+![Chauda Logo](AP1-groupe1/AP01_GRP1/public/assets/img/navbar/logo.svg)
 
 Le projet Chauda est un site Web conçu pour un chauffagiste, offrant une plateforme en ligne pour présenter ses services, ses compétences et interagir avec les clients potentiels. Cette application Symfony facilite la gestion des informations liées au chauffagiste, des rendez-vous et de la communication avec les clients.
 
