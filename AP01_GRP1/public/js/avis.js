@@ -17,21 +17,7 @@ hitboxs.forEach((hitbox) => {
     hitbox.addEventListener("click", () => {
         selectEtoile(hitbox.getAttribute("id"))
 
-
-        $(document).ready(function () {
-            $('#ajout-donnee').click(function () {
-                $.ajax({
-                    type: 'POST',
-                    url: '/ajout-donnee', // L'URL de la route Symfony
-                    success: function (response) {
-                        alert(response.message); // Afficher une alerte avec la réponse du serveur
-                    },
-                    error: function () {
-                        alert('Une erreur s\'est produite lors de l\'ajout de la donnée');
-                    }
-                });
-            });
-        });
+        document.querySelector("#avis_form_noteAvis").value = hitbox.getAttribute("id")/2;
             
     });
 });
@@ -46,6 +32,8 @@ boxEtoiles.addEventListener("mouseleave", () => {
         })
     }
 })
+
+
 
 
 function selectEtoile(a) {

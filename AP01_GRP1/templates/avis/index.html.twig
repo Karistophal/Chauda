@@ -34,12 +34,17 @@
 				</div>
 				<div class="boxAvis">
 					{% for avis in lesAvis %}
-						{% if avis.getNoteAvis >= 4 %}
+						{% if avis.getNoteAvis >= 0 %}
 							<div class="avis">
 								<div class="photoProfile">
 									<div class="boxImgProfile">
 										<img src="assets/img/avis/user.png" class="imgProfile" alt="photoUtilisateur">
 									</div>
+									{% if app.user and app.user.droitUtil == 1 %}
+									<div class="supprimer">Supprimer</div>
+									{% else %}
+									
+									{% endif %}
 								</div>
 								<div class="avisContent">
 									<div class="prenomBox">
@@ -62,6 +67,8 @@
 									</div>
 									<div class="titreAvis">{{ avis.getTitreAvis }}</div>
 									<div class="commentaireAvis">{{ avis.getTexteAvis }}</div>
+									<div class="commentaireAvis" style="margin-top:30px">Date : {{ avis.getDateAvis|date("d-m-Y") }}</div>
+
 								</div>
 							</div>
 						{% endif %}
@@ -80,7 +87,13 @@
 								<div class="boxImgProfile">
 									<img src="assets/img/avis/user.png" class="imgProfile" alt="photoUtilisateur">
 								</div>
-								<h3>Alice</h3>
+								<h3>
+								{% if app.user %}
+									{{ user.getNomUtil }} {{ user.getPrenomUtil }}
+									{% else %}
+									Inconnu
+								{% endif %}</h3>
+								
 							</div>
 							<div class="boxEtoiles">
 								<div class="etoiles">
