@@ -59,6 +59,11 @@ body {
     position: absolute;
 }
 
+.introduction-edit-link {
+    margin-top: -320px;
+
+}
+
 .form-edit:hover {
     background-color: #e0a70b;
     transform: translateY(-2px);
