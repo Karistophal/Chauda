@@ -15,7 +15,7 @@
     <div class="form-group">
         {{ form_label(registrationForm.nomUtil) }}
         {{ form_widget(registrationForm.nomUtil) }}
-        {% if registrationForm.plainPassword.vars.errors|length > 0 %}
+        {% if registrationForm.nomUtil.vars.errors|length > 0 %}
         <div class="has-error">
             {{ form_errors(registrationForm.nomUtil) }}
         </div>
@@ -24,7 +24,7 @@
     <div class="form-group">
         {{ form_label(registrationForm.prenomUtil) }}
         {{ form_widget(registrationForm.prenomUtil) }}
-        {% if registrationForm.plainPassword.vars.errors|length > 0 %}
+        {% if registrationForm.prenomUtil.vars.errors|length > 0 %}
         <div class="has-error">
             {{ form_errors(registrationForm.prenomUtil) }}
         </div>
@@ -33,7 +33,7 @@
     <div class="form-group">
         {{ form_label(registrationForm.emailUtil) }}
         {{ form_widget(registrationForm.emailUtil) }}
-        {% if registrationForm.plainPassword.vars.errors|length > 0 %}
+        {% if registrationForm.emailUtil.vars.errors|length > 0 %}
         <div class="has-error">
             {{ form_errors(registrationForm.emailUtil) }}
         </div>
