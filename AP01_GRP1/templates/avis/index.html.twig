@@ -15,9 +15,12 @@
 		<body>
 			<div class="containerGeneral">
 				<h1>Les Avis Clients</h1>
-				<h4>Avec plus de
-					{{nbAvis - 1}}
-					avis</h4>
+				{% if nbAvis == 0 %}
+				<h4>Il n'y a aucun avis pour le moment</h4>
+				{% else %}
+				<h4>Avec plus de {{nbAvis - 1}} avis</h4>
+				{% endif %}
+
 				<div style="margin-top:15px">
 					{% for i in 1..5 %}
 						{% if i <= moyAvis %}
@@ -41,9 +44,11 @@
 										<img src="assets/img/avis/user.png" class="imgProfile" alt="photoUtilisateur">
 									</div>
 									{% if app.user and app.user.droitUtil == 1 %}
-									<div class="supprimer">Supprimer</div>
-									{% else %}
-									
+										<a href={{ path('app_suppr_avis', {'value' : avis.id} ) }} style="text-decoration: none; position: relative;">
+											<div class="supprimer ">x</div>
+										</a>
+										{% else %}
+
 									{% endif %}
 								</div>
 								<div class="avisContent">
@@ -67,33 +72,39 @@
 									</div>
 									<div class="titreAvis">{{ avis.getTitreAvis }}</div>
 									<div class="commentaireAvis">{{ avis.getTexteAvis }}</div>
-									<div class="commentaireAvis" style="margin-top:30px">Date : {{ avis.getDateAvis|date("d-m-Y") }}</div>
+									<div class="commentaireAvis" style="margin-top:30px">
+										<h3>Date :
+										</h3>
+										{{ avis.getDateAvis|date("d-m-Y") }}</div>
 
 								</div>
 							</div>
 						{% endif %}
 					{% endfor %}
 				</div>
-					<div class="boxTitreAvis">
-						<div class="boxImgProfile" style="background-color: var(--color-principale);">
-							<img src="assets/img/avis/avis-positif.png" width="70%" height="70%" alt="photoUtilisateur">
-						</div>
-						<h2>Votre avis nous intéresse :</h2>
+				<div class="boxTitreAvis">
+					<div class="boxImgProfile" style="background-color: var(--color-principale);">
+						<img src="assets/img/avis/avis-positif.png" width="70%" height="70%" alt="photoUtilisateur">
 					</div>
+					<h2>Votre avis nous intéresse :</h2>
+				</div>
 
-					<div class="formAvis">
+				<div class="formAvis">
+					{% if app.user %}
 						<div class="formHead">
 							<div class="formHeadComponent">
 								<div class="boxImgProfile">
 									<img src="assets/img/avis/user.png" class="imgProfile" alt="photoUtilisateur">
 								</div>
 								<h3>
-								{% if app.user %}
-									{{ user.getNomUtil }} {{ user.getPrenomUtil }}
+									{% if app.user %}
+										{{ user.getNomUtil }}
+										{{ user.getPrenomUtil }}
 									{% else %}
-									Inconnu
-								{% endif %}</h3>
-								
+										Inconnu
+									{% endif %}
+								</h3>
+
 							</div>
 							<div class="boxEtoiles">
 								<div class="etoiles">
@@ -125,12 +136,15 @@
 							<div class="btnSubmit shadowBoxSubmit"></div>
 						</div>
 						{{ form_end(form) }}
-					</div>
+					{% else %}
+						Veuillez vous connecter pour partager un avis.
+					{% endif %}
+
 				</div>
+			</div>
 		</body>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="js/avis.js"></script>
 	</html>
 {% endblock %}
-
 
