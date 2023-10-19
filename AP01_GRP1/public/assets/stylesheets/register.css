@@ -1,9 +1,18 @@
+body {
+    width: 100%;
+}
+
+.register-body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 .register-wrapper {
     width: 32.5%;
     display: flex;
+    margin-top: 100px;
     flex-direction: column;
-    margin: 7.5% 37.5%;
     background-color: #e6e6e6;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -102,7 +111,6 @@
 @media screen and (max-width: 1024px) {
     .register-wrapper {
         width: 50%;
-        margin: 10% 25%;
     }
 
     .register-label {

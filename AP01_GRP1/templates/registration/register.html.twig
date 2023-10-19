@@ -2,54 +2,58 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Chauda - Inscritpion{% endblock %}
+{% block title %}Inscription
+{% endblock %}
 
 {% block body %}
-<link rel="stylesheet" href="/assets/stylesheets/register.css">
-{% if not app.user %} 
-<div class="register-wrapper">
-    <div class="register-header">
-        <h1 class="register-header-title">S'enregistrer</h1>
-    </div>
-    {{ form_start(registrationForm) }}
-    <div class="form-group">
-        {{ form_label(registrationForm.nomUtil) }}
-        {{ form_widget(registrationForm.nomUtil) }}
-        {% if registrationForm.nomUtil.vars.errors|length > 0 %}
-        <div class="has-error">
-            {{ form_errors(registrationForm.nomUtil) }}
-        </div>
-        {% endif %}
-    </div>
-    <div class="form-group">
-        {{ form_label(registrationForm.prenomUtil) }}
-        {{ form_widget(registrationForm.prenomUtil) }}
-        {% if registrationForm.prenomUtil.vars.errors|length > 0 %}
-        <div class="has-error">
-            {{ form_errors(registrationForm.prenomUtil) }}
-        </div>
-        {% endif %}
-    </div>
-    <div class="form-group">
-        {{ form_label(registrationForm.emailUtil) }}
-        {{ form_widget(registrationForm.emailUtil) }}
-        {% if registrationForm.emailUtil.vars.errors|length > 0 %}
-        <div class="has-error">
-            {{ form_errors(registrationForm.emailUtil) }}
-        </div>
-        {% endif %}
-    </div>
-    <div class="form-group">
-    {{ form_widget(registrationForm.plainPassword) }} 
-    {% if registrationForm.plainPassword.vars.errors|length > 0 %}
-        <div class="has-error">
-            {{ form_errors(registrationForm.plainPassword) }}
-        </div>
-    {% endif %}
-    <a class="form-already" href="{{ path('login') }}">Vous-avez déjà un compte ?</a>
-    </div>
-    <button type="submit" class="form-submit">S'inscrire</button>
-    {{ form_end(registrationForm) }}
-</div>
-{% endif %}
+	<link rel="stylesheet" href="/assets/stylesheets/register.css">
+	{% if not app.user %}
+		<div class="register-body">
+			<div class="register-wrapper">
+				<div class="register-header">
+					<h1 class="register-header-title">S'enregistrer</h1>
+				</div>
+				{{ form_start(registrationForm) }}
+				<div class="form-group">
+					{{ form_label(registrationForm.nomUtil) }}
+					{{ form_widget(registrationForm.nomUtil) }}
+					{% if registrationForm.plainPassword.vars.errors|length > 0 %}
+						<div class="has-error">
+							{{ form_errors(registrationForm.nomUtil) }}
+						</div>
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form_label(registrationForm.prenomUtil) }}
+					{{ form_widget(registrationForm.prenomUtil) }}
+					{% if registrationForm.plainPassword.vars.errors|length > 0 %}
+						<div class="has-error">
+							{{ form_errors(registrationForm.prenomUtil) }}
+						</div>
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form_label(registrationForm.emailUtil) }}
+					{{ form_widget(registrationForm.emailUtil) }}
+					{% if registrationForm.plainPassword.vars.errors|length > 0 %}
+						<div class="has-error">
+							{{ form_errors(registrationForm.emailUtil) }}
+						</div>
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form_widget(registrationForm.plainPassword) }}
+					{% if registrationForm.plainPassword.vars.errors|length > 0 %}
+						<div class="has-error">
+							{{ form_errors(registrationForm.plainPassword) }}
+						</div>
+					{% endif %}
+					<a class="form-already" href="{{ path('login') }}">Vous-avez déjà un compte ?</a>
+				</div>
+				<button type="submit" class="form-submit">S'inscrire</button>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+	{% endif %}
 {% endblock %}
+
