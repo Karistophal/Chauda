@@ -1,0 +1,37 @@
+{% block body %}
+
+<link rel="stylesheet" href="/assets/stylesheets/presta.css">
+
+<div class="titreForm">
+    <h1>Modifier une prestation</h1>
+</div>
+
+{% if app.user and app.user.droitUtil == 1 %}
+
+<div class="form-container">
+{{ form_start(editForm)}}
+    <div class="textbox">
+    {{ form_row(editForm.libPrestation) }}
+    {{ form_row(editForm.descPrestation) }}
+    {{ form_row(editForm.image) }}
+    </div>
+    <div class="numbers">
+    {{ form_row(editForm.prixHT)}}
+    {{ form_row(editForm.prixTTC)}}
+    {{ form_row(editForm.mainOeuvre) }}
+    {{ form_row(editForm.dureePrestation)}}
+    </div>
+
+    <button type="submit" class="confirmAjout">Confirmer</button>
+{{ form_end(editForm) }}
+</div>
+
+<button class="cancelBtn" onclick="window.location.href = '/prestation'">Annuler</button>
+
+{% else %}
+<div class="txtError">
+    <p>Vous n'avez pas le droit de modifier une prestation</p>
+    <a href="/prestation">Retour</a>
+</div>
+{% endif %}
+{% endblock %}
