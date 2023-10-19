@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class AvisFormType extends AbstractType
 {
@@ -32,11 +32,14 @@ class AvisFormType extends AbstractType
                 ],
                 'label' => false,
             ])
-            ->add('noteAvis')
-            ->add('idUtilAvis')
+            ->add('noteAvis', HiddenType::class, [
+                'data' => '0',
+                
+            ])
+            ->remove('idUtilAvis')
+            ->remove('dateAvis')
+            
         ;
-
-
     }
 
     public function configureOptions(OptionsResolver $resolver): void

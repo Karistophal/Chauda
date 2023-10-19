@@ -21,6 +21,13 @@ use Symfony\Component\Security\Core\UserInterface;
 
 class AvisController extends AbstractController
 {
+    private $security;
+
+    public function __construct(EntityManagerInterface $entityManager, Security $security)
+    {
+        $this->entityManager = $entityManager;
+        $this->security = $security;
+    }
 
     /**
      * @Route("/avis", name="app_avis")
@@ -44,7 +51,7 @@ class AvisController extends AbstractController
         }   
 
 
-
+        $user = $this->security->getUser();
         $leAvis = new Avis();
 
         $form = $this->createForm(AvisFormType::class, $leAvis);
@@ -52,9 +59,13 @@ class AvisController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $leAvis->setIdUtilAvis($user);
+            $leAvis->setDateAvis(new \DateTime());
+
             $entityManager->persist($leAvis);
             $entityManager->flush();
 
+            return $this->redirectToRoute('avis');
         }
         
 
@@ -63,6 +74,7 @@ class AvisController extends AbstractController
             'lesAvis' => $lesAvis,
             'moyAvis' => $moyAvis,
             'nbAvis' => $nbAvis,
+            'user' => $user,
         ]);
     }
 

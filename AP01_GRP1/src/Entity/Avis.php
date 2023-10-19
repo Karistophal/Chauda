@@ -28,7 +28,7 @@ class Avis
     private $texteAvis;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $noteAvis;
 
@@ -37,6 +37,12 @@ class Avis
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUtilAvis;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateAvis;
+
 
     public function getId(): ?int
     {
@@ -67,12 +73,12 @@ class Avis
         return $this;
     }
 
-    public function getNoteAvis(): ?int
+    public function getNoteAvis(): ?float
     {
         return $this->noteAvis;
     }
 
-    public function setNoteAvis(int $noteAvis): self
+    public function setNoteAvis(float $noteAvis): self
     {
         $this->noteAvis = $noteAvis;
 
@@ -87,6 +93,18 @@ class Avis
     public function setIdUtilAvis(?utilisateur $idUtilAvis): self
     {
         $this->idUtilAvis = $idUtilAvis;
+
+        return $this;
+    }
+
+    public function getDateAvis(): ?\DateTimeInterface
+    {
+        return $this->dateAvis;
+    }
+
+    public function setDateAvis(\DateTimeInterface $dateAvis): self
+    {
+        $this->dateAvis = $dateAvis;
 
         return $this;
     }
