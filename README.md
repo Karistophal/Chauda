@@ -27,6 +27,9 @@ Le projet Chauda est un site Web conçu pour un chauffagiste, offrant une platef
 
 ![CSS](https://img.shields.io/badge/CSS3-blue?style=for-the-badge)
 
+# Maquette utilisé
+
+https://www.figma.com/file/th4RjjISwQg0IC6ayvjn28/AP01_GRP1?type=design&mode=design&t=4Bv3cugle1vOcljf-0
 
 ## Installation
 
